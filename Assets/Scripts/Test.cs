@@ -17,7 +17,7 @@ public class Test : MonoBehaviour
     [ContextMenu("Test")]
     public void Testing(){
         Debug.Log(testEvent.ToString());
-        FlowChartManager.PlayEvent(testEvent.ToString());
+        FlowChartManager.PlayEvent(testEvent);
         // endingManager.GetEnd(ending);
     }
     
