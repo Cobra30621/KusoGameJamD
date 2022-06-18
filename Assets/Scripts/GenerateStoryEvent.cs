@@ -82,9 +82,9 @@ public class GenerateStoryEvent : Editor
     class StoryEventData
     {
         public EventType EventA = EventType.Sing;
-        public EventType EventB = EventType.Game;
-        public EventType EventC = EventType.TakeSign;
-        public EventType EventD = EventType.DirtyJoke;
+        public EventType EventB = EventType.TakeSign;
+        public EventType EventC = EventType.DirtyJoke;
+        public EventType EventD = EventType.Game;
 
 
         public int[] A_FavorableEffect = { 30, 10, 0, 0 };

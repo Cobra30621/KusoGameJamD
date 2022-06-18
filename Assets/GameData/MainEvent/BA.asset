@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEnding: 0
   ID: 
-  DoEvent: 3
+  DoEvent: 1
   FavorableEffect: 10
   End_A_Effect: 50
   End_B_Effect: 0

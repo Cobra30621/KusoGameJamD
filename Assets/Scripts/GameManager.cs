@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
     public string ChooseOrder;
+    public int ChooseCount;
 
     public int FavorableEffect;
     public int NeedFavorableEffect;
@@ -26,7 +29,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        ReStart();
+        Init();
     }
 
     void Update()
@@ -34,9 +37,11 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void ReStart()
+    public void Init()
     {
+
         ChooseOrder = "";
+        ChooseCount = 0;
         Love_route = false;
 
         foreach (GameObject go in interActiveObjectList){
@@ -47,12 +52,18 @@ public class GameManager : MonoBehaviour
         restartButton.SetActive(false);
     }
 
+    public void ReLoad(){
+        SceneManager.LoadScene("Main");
+    }
+
     public void PlayEventData(string id , bool isABCD){
         
         EventData eventData = null;
-        ChooseOrder += id;
-        if(isABCD)
+        
+        if(isABCD){
+            ChooseOrder += id;
             eventData = GetEventData(ChooseOrder);
+        }
         else 
             eventData = GetEventData(id);
 
@@ -66,9 +77,16 @@ public class GameManager : MonoBehaviour
             // 判斷是否撥放結局
             if(eventData.isEnding)
                 PlayEnding(eventData.DoEvent);
-            else
+            else{
                 FlowChartManager.PlayEvent(eventData.DoEvent);
-            
+                ChooseCount ++ ;
+            }
+        }
+    }
+
+    public void CheckWhetherPlayEnd(){
+        if(ChooseCount == 4){
+            PlayEnding(EventType.JudgeEnd);
         }
     }
 
