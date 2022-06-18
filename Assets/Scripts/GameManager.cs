@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
         
         if(isABCD){
             ChooseOrder += id;
+            ChooseCount ++ ;
             eventData = GetEventData(ChooseOrder);
         }
         else 
@@ -79,7 +80,6 @@ public class GameManager : MonoBehaviour
                 PlayEnding(eventData.DoEvent);
             else{
                 FlowChartManager.PlayEvent(eventData.DoEvent);
-                ChooseCount ++ ;
             }
         }
     }
