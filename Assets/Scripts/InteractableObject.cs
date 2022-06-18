@@ -18,7 +18,6 @@ public abstract class InteractableObject : MonoBehaviour,IPointerEnterHandler, I
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
-        print(rectTransform);
         originPos = rectTransform.position;
     }
 
@@ -41,7 +40,8 @@ public abstract class InteractableObject : MonoBehaviour,IPointerEnterHandler, I
                         break;
 
                     case ActiveWay.Click:
-                        OnActiveEvent();
+                        if(Input.GetMouseButtonDown(0))
+                            OnActiveEvent();
                         break;
                 }
             }
