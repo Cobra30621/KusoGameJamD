@@ -12,9 +12,12 @@ public class Test : MonoBehaviour
         // FlowChartManager.PlayEvent("A");
     }
 
+
+    public EventType testEvent;
     [ContextMenu("Test")]
     public void Testing(){
-        endingManager.GetEnd(ending);
+        FlowChartManager.PlayEvent(testEvent);
+        // endingManager.GetEnd(ending);
     }
     
 }

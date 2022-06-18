@@ -8,6 +8,7 @@ public class FlowChartManager : MonoBehaviour
     public static FlowChartManager instance;
     public Flowchart m_flowchart;
     public string testBlock;
+    public static bool isPlaying;
     // Start is called before the first frame update
     void Awake()
     {
@@ -35,4 +36,14 @@ public class FlowChartManager : MonoBehaviour
     public void PlayBlock(string block){
         UseFungus.PlayBlock( m_flowchart ,block );
     }
+
+    public static void SetIsPlaying(bool bo){
+        isPlaying = bo;
+    }
+}
+
+[System.Serializable]
+public enum EventType{
+    Sing , TakeSign , DirtyJoke, Game , 
+    LoveLetter, Kuso, Wine, Leave, 
 }
