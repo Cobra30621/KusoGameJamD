@@ -29,11 +29,11 @@ public class FlowChartManager : MonoBehaviour
         PlayBlock(testBlock);
     }
 
-    public static void PlayEvent(string block){
-        instance.PlayBlock(block);
+    public static void PlayEvent(EventType eventType){
+        instance.PlayBlock(eventType.ToString());
     }
 
-    public void PlayBlock(string block){
+    private void PlayBlock(string block){
         UseFungus.PlayBlock( m_flowchart ,block );
     }
 

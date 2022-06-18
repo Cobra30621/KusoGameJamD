@@ -10,7 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b64e7bc79ccedaf4bbdf523160d9d307, type: 3}
-  m_Name: New Event Data
+  m_Name: A
   m_EditorClassIdentifier: 
-  ID: 
-  FavorableEffect: 0
+  ID: A
+  DoEvent: 0
+  FavorableEffect: 5
+  End_A_Effect: 10
+  End_B_Effect: 100
+  End_C_Effect: 10
+  End_D_Effect: 100
