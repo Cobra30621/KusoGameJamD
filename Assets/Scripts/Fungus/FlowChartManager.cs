@@ -44,6 +44,8 @@ public class FlowChartManager : MonoBehaviour
 
 [System.Serializable]
 public enum EventType{
-    Sing , TakeSign , DirtyJoke, Game , 
+    Sing , TakeSign , DirtyJoke, Game, 
     LoveLetter, Kuso, Wine, Leave, 
+    SingEnd , TakeSignEnd, DirtyJokeEnd, GameEnd,
+    LoveSuccessEnd, LoveFalseEnd, KusoEnd, WineEnd, LeaveEnd
 }
