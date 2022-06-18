@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b64e7bc79ccedaf4bbdf523160d9d307, type: 3}
-  m_Name: K
+  m_Name: Leave
   m_EditorClassIdentifier: 
   isEnding: 1
   ID: 
-  DoEvent: 7
+  DoEvent: 9
   FavorableEffect: 0
   End_A_Effect: 0
   End_B_Effect: 0
