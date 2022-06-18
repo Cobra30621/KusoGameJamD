@@ -17,7 +17,9 @@ public class GameManager : MonoBehaviour
 
     public bool Love_route;
 
+    public List<GameObject> interActiveObjectList;
     public List<EventData> eventList;
+    public EndingManager endingManager;
 
 
     void Start()
@@ -35,11 +37,20 @@ public class GameManager : MonoBehaviour
     {
         ChooseOrder = "";
         Love_route = false;
+
+        foreach (GameObject go in interActiveObjectList){
+            go.SetActive(true);
+        }
     }
 
-    public void PlayEventData(string id){
+    public void PlayEventData(string id , bool isABCD){
+        
+        EventData eventData = null;
         ChooseOrder += id;
-        EventData eventData = GetEventData(ChooseOrder);
+        if(isABCD)
+            eventData = GetEventData(ChooseOrder);
+        else 
+            eventData = GetEventData(id);
 
         if(eventData != null){
             FavorableEffect += eventData.FavorableEffect;
@@ -48,7 +59,12 @@ public class GameManager : MonoBehaviour
             End_C_Effect += eventData.End_C_Effect;
             End_D_Effect += eventData.End_D_Effect;
 
-            FlowChartManager.PlayEvent(eventData.DoEvent);
+            // 判斷是否撥放結局
+            if(eventData.isEnding)
+                PlayEnding(eventData.DoEvent);
+            else
+                FlowChartManager.PlayEvent(eventData.DoEvent);
+            
         }
     }
 
@@ -75,12 +91,13 @@ public class GameManager : MonoBehaviour
         if(eventType == EventType.LeaveEnd) ending = Ending.LeaveEnd;
 
         FlowChartManager.PlayEnd(ending);
+        endingManager.GetEnd(ending);
 
     }
 
     public EventData GetEventData(string id){
         foreach (EventData eventData in eventList){
-            if(eventData.ID == id){
+            if(eventData.name == id){
                 Debug.Log($"取得事件:{id}");
                 return eventData;
             }

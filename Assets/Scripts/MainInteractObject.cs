@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class MainInteractObject : InteractableObject
 {
+    public bool isABCD;
     public EventType eventType;
     public override void OnActiveEvent()
     {
-        
-        
-        GameManager.instance.PlayEventData(this.name);
+        GameManager.instance.PlayEventData(this.name, isABCD);
+
         // FlowChartManager.PlayEvent(eventType);
-        print(GameManager.instance.ChooseOrder);
+        // print(GameManager.instance.ChooseOrder);
         gameObject.SetActive(false);
     }
 }
