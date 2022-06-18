@@ -18,9 +18,9 @@ public class GameManager : MonoBehaviour
     public int End_C_Effect;
     public int End_D_Effect;
 
-    public bool Love_route;
+    public bool loveRoute;
+    public bool wineRoute;
 
-    public List<GameObject> interActiveObjectList;
     public List<EventData> eventList;
     public EndingManager endingManager;
     public GameObject restartButton;
@@ -32,27 +32,17 @@ public class GameManager : MonoBehaviour
         Init();
     }
 
-    void Update()
-    {
-        
-    }
-
     public void Init()
     {
 
         ChooseOrder = "";
         ChooseCount = 0;
-        Love_route = false;
+        loveRoute = false;
 
-        foreach (GameObject go in interActiveObjectList){
-            go.SetActive(true);
-        }
-
-        endingManager.CloseAllEndImage();
         restartButton.SetActive(false);
     }
 
-    public void ReLoad(){
+    public void ReStart(){
         SceneManager.LoadScene("Main");
     }
 
@@ -84,7 +74,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void CheckWhetherPlayEnd(){
+    public void CheckWhetherPlayEnding(){
         if(ChooseCount == 4){
             PlayEnding(EventType.JudgeEnd);
         }
@@ -99,8 +89,8 @@ public class GameManager : MonoBehaviour
         if(End_C_Effect > End_B_Effect) ending = Ending.DirtyJokeEnd;
         if(End_D_Effect > End_C_Effect) ending = Ending.GameEnd;
 
-        // 戀愛入線
-        if(Love_route){
+        // 戀愛路線
+        if(loveRoute){
             if(FavorableEffect >= NeedFavorableEffect)
                 ending = Ending.LoveSuccessEnd;
             else
@@ -116,7 +106,7 @@ public class GameManager : MonoBehaviour
         endingManager.ShowEndImage(ending);
         FlowChartManager.PlayEnd(ending);
         // FlowChartManager.PlayBlockByString("AfterEnd");
-        endingManager.GetEnd(ending);
+        endingManager.GainEnd(ending);
 
     }
 
@@ -131,4 +121,15 @@ public class GameManager : MonoBehaviour
         Debug.Log($"沒有事件:{id}");
         return null;
     }
+
+    public void StartLoveRoute(){
+        Debug.Log("StartLoveRoute");
+        loveRoute = true;
+    }
+
+    public void StartWineRoute(){
+        Debug.Log("StartWineRoute");
+        wineRoute = true;
+    }
+
 }

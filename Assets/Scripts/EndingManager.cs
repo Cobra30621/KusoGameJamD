@@ -15,16 +15,15 @@ public class EndingManager : MonoBehaviour
         foreach (EndingData end in endings){
             end.Init();
         }
-        UpdateIcons();
-        CloseAllEndImage();
+        UpdateEndIcons();
     }
 
-    public void GetEnd(Ending ending){
+    public void GainEnd(Ending ending){
         foreach (EndingData end in endings){
             if(end.ending == ending){
                 end.SetEnding();
                 Debug.Log($"取得結局{end.ending}");
-                UpdateIcons();
+                UpdateEndIcons();
                 return;
             }
             
@@ -34,8 +33,7 @@ public class EndingManager : MonoBehaviour
         
     }
 
-    [ContextMenu("UpdateIcons")]
-    public void UpdateIcons(){
+    public void UpdateEndIcons(){
         DestoryAllEndBar();
         foreach (EndingData end in endings)
         {
@@ -59,8 +57,7 @@ public class EndingManager : MonoBehaviour
     public void ShowEndImage(Ending ending){
         foreach (EndingData end in endings){
             if(end.ending == ending){
-                if(end.endObj != null);
-                    end.endObj.SetActive(true);
+                end.endObj.SetActive(true);
                 return;
             }
             
@@ -68,13 +65,7 @@ public class EndingManager : MonoBehaviour
         Debug.Log($"沒有結局{ending}");
     }
 
-    public void CloseAllEndImage(){
-        foreach (EndingData end in endings){
-            if(end.endObj != null)
-                end.endObj.SetActive(false);
-            
-        }
-    }
+    
 }
 
 [System.Serializable]
