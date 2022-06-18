@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "New Event Data")]
 public class EventData : ScriptableObject
 {
+    public bool isEnding;
     public string ID;
     public EventType DoEvent;
     public int FavorableEffect;

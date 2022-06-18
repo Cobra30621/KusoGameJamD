@@ -29,6 +29,10 @@ public class FlowChartManager : MonoBehaviour
         PlayBlock(testBlock);
     }
 
+    public static void PlayEnd(Ending eventType){
+        instance.PlayBlock(eventType.ToString());
+    }
+
     public static void PlayEvent(EventType eventType){
         instance.PlayBlock(eventType.ToString());
     }
@@ -46,6 +50,5 @@ public class FlowChartManager : MonoBehaviour
 public enum EventType{
     Sing , TakeSign , DirtyJoke, Game, 
     LoveLetter, Kuso, Wine, Leave, 
-    SingEnd , TakeSignEnd, DirtyJokeEnd, GameEnd,
-    LoveSuccessEnd, LoveFalseEnd, KusoEnd, WineEnd, LeaveEnd
+    JudgeEnd, KusoEnd, WineEnd, LeaveEnd
 }

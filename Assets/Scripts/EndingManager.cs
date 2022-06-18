@@ -84,7 +84,8 @@ public class EndingData{
 
 [System.Serializable]
 public enum Ending{
-    Sing , Late, LoveSuccess, LoveFalse, Kuso, Wine, Leave
+    SingEnd , TakeSignEnd, DirtyJokeEnd, GameEnd,
+    LoveSuccessEnd, LoveFalseEnd, KusoEnd, WineEnd, LeaveEnd
 }
 
 
