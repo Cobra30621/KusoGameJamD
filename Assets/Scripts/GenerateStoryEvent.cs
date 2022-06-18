@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
@@ -9,19 +11,68 @@ public class GenerateStoryEvent : Editor
     [MenuItem("Tools/Generate Story Event Assets")]
     public static void GenerateStoryEventAssets()
     {
+        
+        StoryEventData storyEventData = new StoryEventData();
         string[] EventID = { "A", "B", "C", "D" };
+        int num;
         for (int i = 0; i < 4; i++)
         {
-            for(int j = i + 1; i < 4; j++)
+            string useID_i;
+            List<string> ID_i = new List<string>(EventID);
+            useID_i = ID_i[i];
+            ID_i.RemoveAt(i);
+            EventData eventData = CreateInstance<EventData>();
+            eventData.DoEvent = storyEventData.EventA;
+            eventData.FavorableEffect = (int)((Array)(storyEventData.GetType().GetField(EventID[i] + "_FavorableEffect").GetValue(storyEventData))).GetValue(i);
+            eventData.End_A_Effect = (int)((Array)(storyEventData.GetType().GetField(EventID[i] + "_End_A_Effect").GetValue(storyEventData))).GetValue(i);
+            eventData.End_B_Effect = (int)((Array)(storyEventData.GetType().GetField(EventID[i] + "_End_B_Effect").GetValue(storyEventData))).GetValue(i);
+            eventData.End_C_Effect = (int)((Array)(storyEventData.GetType().GetField(EventID[i] + "_End_C_Effect").GetValue(storyEventData))).GetValue(i);
+            eventData.End_D_Effect = (int)((Array)(storyEventData.GetType().GetField(EventID[i] + "_End_D_Effect").GetValue(storyEventData))).GetValue(i);
+            AssetDatabase.CreateAsset(eventData, "Assets/GameData/MainEvent/" + useID_i + ".asset");
+            AssetDatabase.SaveAssets();
+
+            for (int j = 0; j < 3; j++)
             {
-                for(int n = j + 1; n < 4; n++)
+                string useID_j = String.Copy(useID_i);
+                List<string> ID_j = new List<string>(ID_i);
+                useID_j += ID_j[j];
+                eventData = CreateInstance<EventData>();
+                eventData.DoEvent = storyEventData.EventB;
+                eventData.FavorableEffect = (int)((Array)(storyEventData.GetType().GetField(ID_j[j] + "_FavorableEffect").GetValue(storyEventData))).GetValue(1);
+                eventData.End_A_Effect = (int)((Array)(storyEventData.GetType().GetField(ID_j[j] + "_End_A_Effect").GetValue(storyEventData))).GetValue(1);
+                eventData.End_B_Effect = (int)((Array)(storyEventData.GetType().GetField(ID_j[j] + "_End_B_Effect").GetValue(storyEventData))).GetValue(1);
+                eventData.End_C_Effect = (int)((Array)(storyEventData.GetType().GetField(ID_j[j] + "_End_C_Effect").GetValue(storyEventData))).GetValue(1);
+                eventData.End_D_Effect = (int)((Array)(storyEventData.GetType().GetField(ID_j[j] + "_End_D_Effect").GetValue(storyEventData))).GetValue(1);
+                AssetDatabase.CreateAsset(eventData, "Assets/GameData/MainEvent/" + useID_j + ".asset");
+                AssetDatabase.SaveAssets();
+                ID_j.RemoveAt(j);
+
+                for (int n = 0; n < 2; n++)
                 {
-                    for (int m = j + 1; m < 4; m++)
-                    {
-                        EventData eventData = CreateInstance<EventData>();
-                        AssetDatabase.CreateAsset(eventData, "Assets/GameData/Event/" + EventID[i] + EventID[j] + EventID[n] + EventID[m]);
-                        AssetDatabase.SaveAssets();
-                    }
+                    string useID_n = String.Copy(useID_j);
+                    List<string> ID_n = new List<string>(ID_j);
+                    useID_n += ID_n[n];
+                    eventData = CreateInstance<EventData>();
+                    eventData.DoEvent = storyEventData.EventC;
+                    eventData.FavorableEffect = (int)((Array)(storyEventData.GetType().GetField(ID_n[n] + "_FavorableEffect").GetValue(storyEventData))).GetValue(2);
+                    eventData.End_A_Effect = (int)((Array)(storyEventData.GetType().GetField(ID_n[n] + "_End_A_Effect").GetValue(storyEventData))).GetValue(2);
+                    eventData.End_B_Effect = (int)((Array)(storyEventData.GetType().GetField(ID_n[n] + "_End_B_Effect").GetValue(storyEventData))).GetValue(2);
+                    eventData.End_C_Effect = (int)((Array)(storyEventData.GetType().GetField(ID_n[n] + "_End_C_Effect").GetValue(storyEventData))).GetValue(2);
+                    eventData.End_D_Effect = (int)((Array)(storyEventData.GetType().GetField(ID_n[n] + "_End_D_Effect").GetValue(storyEventData))).GetValue(2);
+                    AssetDatabase.CreateAsset(eventData, "Assets/GameData/MainEvent/" + useID_n + ".asset");
+                    AssetDatabase.SaveAssets();
+                    ID_n.RemoveAt(n);
+
+                    useID_n += ID_n[0];
+                    eventData = CreateInstance<EventData>();
+                    eventData.DoEvent = storyEventData.EventD;
+                    eventData.FavorableEffect = (int)((Array)(storyEventData.GetType().GetField(ID_n[0] + "_FavorableEffect").GetValue(storyEventData))).GetValue(3);
+                    eventData.End_A_Effect = (int)((Array)(storyEventData.GetType().GetField(ID_n[0] + "_End_A_Effect").GetValue(storyEventData))).GetValue(3);
+                    eventData.End_B_Effect = (int)((Array)(storyEventData.GetType().GetField(ID_n[0] + "_End_B_Effect").GetValue(storyEventData))).GetValue(3);
+                    eventData.End_C_Effect = (int)((Array)(storyEventData.GetType().GetField(ID_n[0] + "_End_C_Effect").GetValue(storyEventData))).GetValue(3);
+                    eventData.End_D_Effect = (int)((Array)(storyEventData.GetType().GetField(ID_n[0] + "_End_D_Effect").GetValue(storyEventData))).GetValue(3);
+                    AssetDatabase.CreateAsset(eventData, "Assets/GameData/MainEvent/" + useID_n + ".asset");
+                    AssetDatabase.SaveAssets();
                 }
             }
         }
@@ -30,6 +81,12 @@ public class GenerateStoryEvent : Editor
 
     class StoryEventData
     {
+        public EventType EventA = EventType.Sing;
+        public EventType EventB = EventType.Game;
+        public EventType EventC = EventType.TakeSign;
+        public EventType EventD = EventType.DirtyJoke;
+
+
         public int[] A_FavorableEffect = { 30, 10, 0, 0 };
         public int[] A_End_A_Effect = { 80, 50, 25, 0 };
         public int[] A_End_B_Effect = { 0, 0, 0, 0 };
