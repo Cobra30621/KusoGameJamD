@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     {
         Instance = this;
         fadeImage = fadeImageObj.GetComponent<Image>();
+        fadeImage.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -23,10 +24,12 @@ public class UIManager : MonoBehaviour
 
     public void FadeScene(float A, float time = 1)
     {
+        
         StartCoroutine(fadeEnumerator(A, time));
     }
     IEnumerator fadeEnumerator(float A,float time)
     {
+        fadeImage.gameObject.SetActive(true);
         Color color = Color.black;
         float startTime = Time.time;
         float startA = fadeImage.color.a;
@@ -38,6 +41,7 @@ public class UIManager : MonoBehaviour
         }
         color.a = A;
         fadeImage.color = color;
+        fadeImage.gameObject.SetActive(false);
         yield break;
     }
 }

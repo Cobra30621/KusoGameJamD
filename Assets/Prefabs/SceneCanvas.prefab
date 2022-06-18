@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5963113054808313432}
   - component: {fileID: 7044010034295335714}
   - component: {fileID: 7760294234516874141}
+  - component: {fileID: 671553592}
   m_Layer: 5
   m_Name: SceneCanvas
   m_TagString: Untagged
@@ -58,7 +59,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 99
   m_TargetDisplay: 0
 --- !u!114 &7044010034295335714
 MonoBehaviour:
@@ -99,6 +100,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &671553592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350648977861637989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4207b557da4fc4caec9e5e72578008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeImageObj: {fileID: 8865291228425752543}
 --- !u!1 &8865291228425752543
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
