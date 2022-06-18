@@ -4,30 +4,6 @@ using Fungus;
 public class UseFungus
 {
 
-    // 取得 Flowchart
-    private static Flowchart talkForchart;
-
-    public static void PlayBlock(string targetBlockName)
-    {
-
-        // 尋找Flowchart
-        talkForchart = GameObject.Find("StoryFlowchart").GetComponent<Flowchart>();
-
-        // 尋找Block
-        Block targetBlock = talkForchart.FindBlock(targetBlockName);
-        // 當targetBlock有物件時執行Block
-        if (targetBlock != null)
-        {
-            talkForchart.ExecuteBlock(targetBlock);
-        }
-        else
-        {
-            Debug.LogError("找不到在" + talkForchart.name + "裡的" + targetBlockName + "Block");
-        }
-
-    }
-
-
     public static void PlayBlock(Flowchart fc, string targetBlock)
     {
         // var fc = GOwithFlowChart.GetComponent<Flowchart>();

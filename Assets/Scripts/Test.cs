@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
+    public EndingManager endingManager;
+    public Ending ending;
     // Start is called before the first frame update
     void Start()
     {
-        FlowChartManager.PlayEvent("A");
+        // FlowChartManager.PlayEvent("A");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    [ContextMenu("Test")]
+    public void Testing(){
+        endingManager.GetEnd(ending);
     }
+    
 }
