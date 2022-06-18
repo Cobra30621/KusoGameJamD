@@ -13,7 +13,9 @@ public class EndingManager : MonoBehaviour
     void Start()
     {
         foreach (EndingData end in endings){
-            end.Init();
+            // end.Init();
+            string key = end.ending.ToString();
+            end.finish = (PlayerPrefs.GetInt(key, 0)!=0);
         }
         UpdateEndIcons();
     }
@@ -21,20 +23,26 @@ public class EndingManager : MonoBehaviour
     public void GainEnd(Ending ending){
         foreach (EndingData end in endings){
             if(end.ending == ending){
-                end.SetEnding();
+                string key = end.ending.ToString();
+                PlayerPrefs.SetInt(key, 1);
                 Debug.Log($"取得結局{end.ending}");
-                UpdateEndIcons();
                 return;
             }
             
         }
-        Debug.Log($"沒有結局{ending}");
-
-        
+        Debug.Log($"沒有結局{ending}");        
     }
 
+    [ContextMenu("ResetSaveData")]
+    public void ResetSaveData(){
+        foreach (EndingData end in endings){
+            string key = end.ending.ToString();
+            PlayerPrefs.SetInt(key, 0);
+        }
+    }
+
+
     public void UpdateEndIcons(){
-        DestoryAllEndBar();
         foreach (EndingData end in endings)
         {
             GameObject prefab = Instantiate(endBarPrefab, endPanelPos);
@@ -45,14 +53,6 @@ public class EndingManager : MonoBehaviour
         }
     }
 
-    private void DestoryAllEndBar(){
-        foreach (EndBar bar in endBarList)
-        {
-            Destroy(bar.gameObject);
-        }
-        
-        endBarList = new List<EndBar>();
-    }
 
     public void ShowEndImage(Ending ending){
         foreach (EndingData end in endings){
