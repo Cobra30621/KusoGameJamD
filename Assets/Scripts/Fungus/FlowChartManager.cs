@@ -29,12 +29,18 @@ public class FlowChartManager : MonoBehaviour
         PlayBlock(testBlock);
     }
 
+
+    
     public static void PlayEnd(Ending eventType){
         instance.PlayBlock(eventType.ToString());
     }
 
     public static void PlayEvent(EventType eventType){
         instance.PlayBlock(eventType.ToString());
+    }
+
+    public static void PlayBlockByString(string block){
+        instance.PlayBlock(block);
     }
 
     private void PlayBlock(string block){

@@ -16,12 +16,13 @@ public class EndingManager : MonoBehaviour
             end.Init();
         }
         UpdateIcons();
+        CloseAllEndImage();
     }
 
     public void GetEnd(Ending ending){
         foreach (EndingData end in endings){
             if(end.ending == ending){
-                end.GetEnding();
+                end.SetEnding();
                 Debug.Log($"取得結局{end.ending}");
                 UpdateIcons();
                 return;
@@ -55,15 +56,25 @@ public class EndingManager : MonoBehaviour
         endBarList = new List<EndBar>();
     }
 
-    // public bool WhetherGet(Ending ending){
-    //     foreach (EndingData end in endings){
-    //         if(end.ending == ending){
-    //             return end.finish;
-    //         }
-    //     }
-    //     Debug.Log($"沒有結局{ending}");
-    //     return false;
-    // }
+    public void ShowEndImage(Ending ending){
+        foreach (EndingData end in endings){
+            if(end.ending == ending){
+                if(end.endObj != null);
+                    end.endObj.SetActive(true);
+                return;
+            }
+            
+        }
+        Debug.Log($"沒有結局{ending}");
+    }
+
+    public void CloseAllEndImage(){
+        foreach (EndingData end in endings){
+            if(end.endObj != null)
+                end.endObj.SetActive(false);
+            
+        }
+    }
 }
 
 [System.Serializable]
@@ -71,12 +82,13 @@ public class EndingData{
     public Ending ending;
     public bool finish;
     public Sprite icon;
+    public GameObject endObj;
 
     public void Init(){
         finish = false;
     }
 
-    public void GetEnding(){
+    public void SetEnding(){
 
         finish = true;
     }

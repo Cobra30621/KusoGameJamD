@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> interActiveObjectList;
     public List<EventData> eventList;
     public EndingManager endingManager;
+    public GameObject restartButton;
 
 
     void Start()
@@ -41,6 +42,9 @@ public class GameManager : MonoBehaviour
         foreach (GameObject go in interActiveObjectList){
             go.SetActive(true);
         }
+
+        endingManager.CloseAllEndImage();
+        restartButton.SetActive(false);
     }
 
     public void PlayEventData(string id , bool isABCD){
@@ -90,7 +94,10 @@ public class GameManager : MonoBehaviour
         if(eventType == EventType.WineEnd) ending = Ending.WineEnd;
         if(eventType == EventType.LeaveEnd) ending = Ending.LeaveEnd;
 
+        
+        endingManager.ShowEndImage(ending);
         FlowChartManager.PlayEnd(ending);
+        // FlowChartManager.PlayBlockByString("AfterEnd");
         endingManager.GetEnd(ending);
 
     }
