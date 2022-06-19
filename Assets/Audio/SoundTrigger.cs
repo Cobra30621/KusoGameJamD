@@ -12,6 +12,11 @@ public class SoundTrigger : MonoBehaviour, IPointerEnterHandler, IPointerUpHandl
     {
         isMouseDown = true;
         SoundManager.Instance.PlayPointerEvent(eventType, false);
+
+        if (eventType == Sound.Wine)
+            SoundManager.Instance.Drunk(true);
+        else if (eventType == Sound.StopDrunk)
+            SoundManager.Instance.Drunk(false);
     }
 
     public void OnPointerEnter(PointerEventData eventData)

@@ -30,6 +30,7 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField] AudioMixerSnapshot maxVolume;
     [SerializeField] AudioMixerSnapshot minVolume;
+    [SerializeField] AudioMixerSnapshot drunk;
 
     Music currentMusic = Music.None;
     bool isPreventPlayback = false;
@@ -196,6 +197,14 @@ public class SoundManager : MonoBehaviour
         prevenPlayback = StartCoroutine(PreventPlaybackTime(0.5f));
     }
 
+    public void Drunk(bool isDrunk)
+    {
+        if (isDrunk)
+            drunk.TransitionTo(5f);
+        else
+            maxVolume.TransitionTo(0.1f);
+    }
+
 
 }
 
@@ -204,7 +213,7 @@ public class SoundManager : MonoBehaviour
 public enum Sound
 {
     Sing, TakeSign, DirtyJoke, Game,
-    LoveLetter, Wine,Shit,StartGame,ExitGame
+    LoveLetter, Wine,Shit,StartGame,ExitGame, StopDrunk
 }
 
 public enum Music

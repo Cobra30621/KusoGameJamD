@@ -4960,7 +4960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0d149063a505354394af72b0e832860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventType: 8
+  eventType: 9
 --- !u!1 &1573208183
 GameObject:
   m_ObjectHideFlags: 0
