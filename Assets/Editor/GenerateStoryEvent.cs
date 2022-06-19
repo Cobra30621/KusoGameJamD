@@ -106,14 +106,14 @@ public class GenerateStoryEvent : Editor
         public int[] B_End_B_Effect = { 75, 50, 0, 0 };
         public int[] B_End_C_Effect = { 0, 0, 0, 0 };
         public int[] B_End_D_Effect = { 0, 0, 10, 0 };
-        public string[] B_text = { "過馬路要減速慢行喔！謝謝好野人關心", "減速慢行！", "幸好路上沒塞車，還有時間唱歌玩遊戲！", "路上趕來差點遲到，謝謝關心" };
+        public string[] B_text = { "過馬路要減速慢行喔！謝謝好野人關心", "減速慢行！", "幸好路上沒塞車，還有時間唱歌玩遊戲！", "減速慢行，關心石虎" };
 
         public int[] C_FavorableEffect = { 0, 0, 30, 0 };
         public int[] C_End_A_Effect = { 20, 0, 0, 0 };
         public int[] C_End_B_Effect = { 0, 0, 0, 0 };
         public int[] C_End_C_Effect = { 0, 30, 75, 0 };
         public int[] C_End_D_Effect = { 30, 0, 0, 0 };
-        public string[] C_text = { "Minecraft！", "來射別人雞蛋啦！", "來　讓我看看歐金金吧", "Minecraft！" };
+        public string[] C_text = { "來種田啦！", "來射別人雞蛋啦！", "來　讓我看看歐金金吧", "Minecraft！" };
 
         public int[] D_FavorableEffect = { 30, 0, 0, 0 };
         public int[] D_End_A_Effect = { 0, 0, 0, 0 };
