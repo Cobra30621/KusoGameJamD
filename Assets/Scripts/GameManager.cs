@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     public List<EventData> eventList;
     public EndingManager endingManager;
+    public WineManager wineManager;
     public GameObject restartButton;
 
 
@@ -106,6 +107,7 @@ public class GameManager : MonoBehaviour
         endingManager.ShowEndImage(ending);
         FlowChartManager.PlayEnd(ending);
         // FlowChartManager.PlayBlockByString("AfterEnd");
+        wineManager.Clear(); // 結束倒數
         endingManager.GainEnd(ending);
 
     }
@@ -130,6 +132,7 @@ public class GameManager : MonoBehaviour
     public void StartWineRoute(){
         Debug.Log("StartWineRoute");
         wineRoute = true;
+        wineManager.gameObject.SetActive(true);
     }
 
 }
