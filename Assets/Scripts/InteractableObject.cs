@@ -18,7 +18,6 @@ public abstract class InteractableObject : MonoBehaviour,IPointerEnterHandler, I
     private Vector3 clickPos;
     private Vector3 originPos;
     private RectTransform rectTransform;
-    private Canvas canvas;
     private bool isDraging = false;
     private bool canActive = false;
     // Start is called before the first frame update
@@ -27,7 +26,6 @@ public abstract class InteractableObject : MonoBehaviour,IPointerEnterHandler, I
         rectTransform = GetComponent<RectTransform>();
         image = GetComponent<Image>();
         originPos = rectTransform.anchoredPosition;
-        canvas = GameObject.FindGameObjectWithTag("canvas").GetComponent<Canvas>();
     }
 
     // Update is called once per frame
@@ -53,10 +51,6 @@ public abstract class InteractableObject : MonoBehaviour,IPointerEnterHandler, I
                 case ActiveWay.Click:
                     if (Input.GetMouseButtonDown(0))
                     {
-                        if(activeMaterial != null)
-                        {
-                            image.material = activeMaterial;
-                        }
                         OnActiveEvent();
                     }
                     break;
@@ -64,10 +58,6 @@ public abstract class InteractableObject : MonoBehaviour,IPointerEnterHandler, I
             // reset when mouse up
             if (Input.GetMouseButtonUp(0))
             {
-                if (defaultMaterial != null)
-                {
-                    image.material = defaultMaterial;
-                }
                 rectTransform.anchoredPosition = originPos;
                 isDraging = false;
                 if (canActive)
@@ -89,27 +79,20 @@ public abstract class InteractableObject : MonoBehaviour,IPointerEnterHandler, I
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (activeMaterial != null)
+        {
+            image.material = activeMaterial;
+        }
         isMouseInside = true;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        if (defaultMaterial != null)
+        {
+            image.material = defaultMaterial;
+        }
         isMouseInside = false;
-    }
-
-    public void DragHandler(BaseEventData data)
-    {
-        PointerEventData pointerEvent = (PointerEventData)data;
-
-        Vector2 position;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            (RectTransform)canvas.transform,
-            pointerEvent.position,
-            canvas.worldCamera,
-            out position);
-
-        position = canvas.transform.TransformPoint(position);
-        transform.position = canvas.transform.TransformPoint(position);
     }
 }
 

@@ -2103,6 +2103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActiveWay: 1
+  defaultMaterial: {fileID: 2100000, guid: 3cdc39cacfb912c439052118e6a794bc, type: 2}
+  activeMaterial: {fileID: 2100000, guid: 76ff68f880a0d7a428caeb7693756251, type: 2}
   isABCD: 0
   eventType: 7
 --- !u!222 &676204669
@@ -2843,6 +2845,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActiveWay: 0
+  defaultMaterial: {fileID: 2100000, guid: 3cdc39cacfb912c439052118e6a794bc, type: 2}
+  activeMaterial: {fileID: 2100000, guid: 76ff68f880a0d7a428caeb7693756251, type: 2}
   isABCD: 1
   eventType: 0
 --- !u!222 &963171916
@@ -3119,6 +3123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActiveWay: 0
+  defaultMaterial: {fileID: 2100000, guid: 3cdc39cacfb912c439052118e6a794bc, type: 2}
+  activeMaterial: {fileID: 2100000, guid: 76ff68f880a0d7a428caeb7693756251, type: 2}
   isABCD: 0
   eventType: 4
 --- !u!222 &1008974626
@@ -3248,6 +3254,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActiveWay: 1
+  defaultMaterial: {fileID: 2100000, guid: 3cdc39cacfb912c439052118e6a794bc, type: 2}
+  activeMaterial: {fileID: 2100000, guid: 76ff68f880a0d7a428caeb7693756251, type: 2}
   isABCD: 0
   eventType: 5
 --- !u!222 &1011967374
@@ -3377,6 +3385,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActiveWay: 0
+  defaultMaterial: {fileID: 2100000, guid: 3cdc39cacfb912c439052118e6a794bc, type: 2}
+  activeMaterial: {fileID: 2100000, guid: 76ff68f880a0d7a428caeb7693756251, type: 2}
   isABCD: 1
   eventType: 2
 --- !u!222 &1013418957
@@ -4223,6 +4233,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActiveWay: 0
+  defaultMaterial: {fileID: 2100000, guid: 3cdc39cacfb912c439052118e6a794bc, type: 2}
+  activeMaterial: {fileID: 2100000, guid: 76ff68f880a0d7a428caeb7693756251, type: 2}
   isABCD: 1
   eventType: 1
 --- !u!222 &1254422170
@@ -4469,6 +4481,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActiveWay: 0
+  defaultMaterial: {fileID: 2100000, guid: 3cdc39cacfb912c439052118e6a794bc, type: 2}
+  activeMaterial: {fileID: 2100000, guid: 76ff68f880a0d7a428caeb7693756251, type: 2}
   isABCD: 1
   eventType: 3
 --- !u!222 &1283819675
@@ -5433,6 +5447,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActiveWay: 1
+  defaultMaterial: {fileID: 2100000, guid: 3cdc39cacfb912c439052118e6a794bc, type: 2}
+  activeMaterial: {fileID: 2100000, guid: 76ff68f880a0d7a428caeb7693756251, type: 2}
   isABCD: 0
   eventType: 9
 --- !u!222 &1840358416
