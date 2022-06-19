@@ -26,24 +26,22 @@ public abstract class InteractableObject : MonoBehaviour,IPointerEnterHandler, I
     {
         if (isMouseInside || isDraging)
         {
-            if (Input.GetMouseButton(0))
+            switch (ActiveWay)
             {
-                switch (ActiveWay)
-                {
-                    case ActiveWay.DragOn:
-                        if (Input.GetMouseButtonDown(0))
-                        {
-                            clickPos = mousePos;
-                            isDraging = true;
-                        }
+                case ActiveWay.DragOn:
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        clickPos = mousePos;
+                        isDraging = true;
+                    }
+                    if(isDraging)
                         rectTransform.position = originPos + mousePos - clickPos;
-                        break;
+                    break;
 
-                    case ActiveWay.Click:
-                        if(Input.GetMouseButtonDown(0))
-                            OnActiveEvent();
-                        break;
-                }
+                case ActiveWay.Click:
+                    if(Input.GetMouseButtonDown(0))
+                        OnActiveEvent();
+                    break;
             }
             // reset when mouse up
             if (Input.GetMouseButtonUp(0))
