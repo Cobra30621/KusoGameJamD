@@ -1,8 +1,13 @@
 ﻿Shader "Custom/Main" {
     Properties {
         _MainTex ("Main Tex", 2D) = "white" {}
-		_NoiseTex ("Noise Tex", 2D) = "white" {}
-		_Dynamic ("Wave Center X", Range(0.01, 0.1)) = 0.035
+		[Toggle(FlowOutwards)] _FlowOutward("Flow Outwards", Int) = 1
+		_CenterX("Wave Center X", Range(-1, 2)) = 0.5
+		_CenterY("Wave Center Y", Range(-1, 2)) = 0.5
+		_WaveLength("Wave Length", Range(0.0001, 5)) = 0.02
+		_WaveAmplitude("Wave Amplitude", Range(0, 2)) = 0.02
+		_WavePhase("Wave Phase", Range(0, 1)) = 0
+		_WaveSpeed("Wave Speed", Range(0, 100)) = 1
 		// _NoiseOffset ("Noise Offset", Float) = 0
     }
     SubShader {
@@ -13,38 +18,78 @@
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
+			#pragma target 2.0
 
             #include "UnityCG.cginc"
+			#include "UnityUI.cginc"
 
-            struct appdata {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
-            };
+			struct appdata_t {
+				float4 vertex   : POSITION;
+				float4 color    : COLOR;
+				float2 texcoord : TEXCOORD0;
+				UNITY_VERTEX_INPUT_INSTANCE_ID
+			};
 
             struct v2f {
-                float2 uv : TEXCOORD0;
-                float4 vertex : SV_POSITION;
+				float4 vertex   : SV_POSITION;
+				fixed4 color : COLOR;
+				float2 texcoord  : TEXCOORD0;
+				UNITY_VERTEX_OUTPUT_STEREO
             };
 
-            v2f vert (appdata v) {
+            /*v2f vert (appdata v) {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = v.uv;
                 return o;
-            }
+            }*/
 
             sampler2D _MainTex;
-			sampler2D _NoiseTex;
-			float _Dynamic;
-			float _NoiseOffset;
+			uniform float4 _ClipRect;
+			uniform int _FlowOutward;
+			uniform float _CenterX;
+			uniform float _CenterY;
+			uniform float _WaveLength;
+			uniform float _WaveAmplitude;
+			uniform float _WavePhase;
+			uniform float _WaveSpeed;
 
-            fixed4 frag (v2f i) : SV_Target {
-				fixed2 noiseOffset = fixed2(0, _NoiseOffset);
-				fixed2 mainOffset = tex2D(_NoiseTex, i.uv + noiseOffset).rg * _Dynamic;
-                fixed4 col = tex2D(_MainTex, i.uv + mainOffset);
-                // just invert the colors
-                // col.rgb = 1 - col.rgb;
-                return col;
+			v2f vert(appdata_t IN) {
+				v2f OUT;
+				/*UNITY_SETUP_INSTANCE_ID(IN);
+				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(OUT);*/
+				OUT.vertex = UnityObjectToClipPos(IN.vertex);
+
+				OUT.texcoord = IN.texcoord;
+
+				OUT.color = IN.color;
+				return OUT;
+			}
+
+            fixed4 frag (v2f IN) : SV_Target {
+				float offsetX = IN.texcoord.x - _CenterX;
+				float offsetY = IN.texcoord.y - _CenterY;
+				float dis = sqrt(abs(offsetX * offsetX + offsetY * offsetY));
+
+				float v1;
+				if (_FlowOutward != 0) {
+					v1 = frac(dis / _WaveLength + _WavePhase - _Time * _WaveSpeed);
+				}
+				else {
+					v1 = frac(dis / _WaveLength + _WavePhase + _Time * _WaveSpeed);
+				}
+
+				float vSin = _WaveAmplitude * sin(v1*6.2832f);
+				float2 coordOffset = float2(vSin*offsetX / dis, vSin*offsetY / dis);
+				fixed4 color = tex2D(_MainTex, IN.texcoord + coordOffset);
+
+				color.a *= UnityGet2DClipping(IN.vertex.xy, _ClipRect);
+
+		/*#ifdef UNITY_UI_ALPHACLIP
+				clip(color.a - 0.001);
+		#endif*/
+
+				return color;
             }
             ENDCG
         }
