@@ -902,6 +902,7 @@ GameObject:
   - component: {fileID: 1174145108}
   - component: {fileID: 1174145110}
   - component: {fileID: 1174145109}
+  - component: {fileID: 1174145112}
   - component: {fileID: 1174145111}
   m_Layer: 5
   m_Name: Text
@@ -978,7 +979,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174145107}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: cb4e56baabb28914f852cf958653b74c, type: 2}
   m_CullingMode: 0
@@ -989,6 +990,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1174145112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174145107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fc94a8d65648aa4d9e162642ad92fee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start: 0
+  loop: 0
+  targetText: {fileID: 1174145109}
 --- !u!1 &1470526125
 GameObject:
   m_ObjectHideFlags: 1
