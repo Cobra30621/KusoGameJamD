@@ -307,39 +307,39 @@ MonoBehaviour:
   endings:
   - ending: 0
     finish: 1
-    icon: {fileID: 21300000, guid: 061fcd6caac25954287291fffde7cd2c, type: 3}
+    icon: {fileID: 21300000, guid: 93512762d91371240b1381f620e2fd2a, type: 3}
     endObj: {fileID: 1113345475}
   - ending: 1
     finish: 1
-    icon: {fileID: 21300000, guid: 8f5b5b110e73a414eb229eeead86200f, type: 3}
+    icon: {fileID: 21300000, guid: e895d063110c10342a21791929bca696, type: 3}
     endObj: {fileID: 558891025}
   - ending: 2
     finish: 1
-    icon: {fileID: 21300000, guid: 8f5b5b110e73a414eb229eeead86200f, type: 3}
+    icon: {fileID: 21300000, guid: 22a5667b93c14e9428ec74421d0141ab, type: 3}
     endObj: {fileID: 1577320882}
   - ending: 3
     finish: 1
-    icon: {fileID: 21300000, guid: 8f5b5b110e73a414eb229eeead86200f, type: 3}
+    icon: {fileID: 21300000, guid: 0053b79bb382e4c4299c99714e2906cd, type: 3}
     endObj: {fileID: 1249822048}
   - ending: 4
     finish: 1
-    icon: {fileID: 21300000, guid: 8f5b5b110e73a414eb229eeead86200f, type: 3}
+    icon: {fileID: 21300000, guid: 26ba2c0319b63ed4b9020580dd08056c, type: 3}
     endObj: {fileID: 583863378}
   - ending: 5
     finish: 1
-    icon: {fileID: 21300000, guid: 8f5b5b110e73a414eb229eeead86200f, type: 3}
+    icon: {fileID: 21300000, guid: 26ba2c0319b63ed4b9020580dd08056c, type: 3}
     endObj: {fileID: 1276147149}
   - ending: 6
     finish: 1
-    icon: {fileID: 21300000, guid: 8f5b5b110e73a414eb229eeead86200f, type: 3}
+    icon: {fileID: 21300000, guid: 364c6d393581c694daa26db9edbd6795, type: 3}
     endObj: {fileID: 752883315}
   - ending: 7
     finish: 1
-    icon: {fileID: 21300000, guid: 8f5b5b110e73a414eb229eeead86200f, type: 3}
+    icon: {fileID: 21300000, guid: 9519cd6bba7ed0a4286ac59dcaa6d74a, type: 3}
     endObj: {fileID: 1057976848}
   - ending: 8
     finish: 1
-    icon: {fileID: 21300000, guid: 8f5b5b110e73a414eb229eeead86200f, type: 3}
+    icon: {fileID: 21300000, guid: 71ca87190ac025041838554633bc09a8, type: 3}
     endObj: {fileID: 1162790175}
   endBarList: []
   endBarPrefab: {fileID: 6961073082708392948, guid: 0c3b27a70f13d5f4480610f192adc032,
@@ -508,7 +508,7 @@ MonoBehaviour:
   indentLevel: 0
   _duration:
     floatRef: {fileID: 0}
-    floatVal: 3
+    floatVal: 1
   durationOLD: 0
 --- !u!114 &408172004
 MonoBehaviour:
@@ -568,7 +568,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 573.5449
     y: -70.91714
-    width: 69.2
+    width: 65.5294
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -595,7 +595,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 846.37067
     y: 382.4119
-    width: 62
+    width: 60
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -665,7 +665,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 549.4
     y: 435.5
-    width: 91.6
+    width: 84.35293
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -734,7 +734,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 564.4
     y: 487.67648
-    width: 60.4
+    width: 60
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -803,7 +803,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 601.60004
     y: 343.77585
-    width: 65.2
+    width: 62.70587
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -891,7 +891,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 583.60004
     y: 390.5
-    width: 110
+    width: 102.235275
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -939,7 +939,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 565.9
     y: 104
-    width: 72.4
+    width: 67.41175
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -966,7 +966,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 578.80005
     y: 289.5
-    width: 87.6
+    width: 82.47057
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1042,7 +1042,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 571.5242
     y: 231.5
-    width: 86.8
+    width: 82.47057
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1145,7 +1145,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 558.8916
     y: 536.9387
-    width: 60.4
+    width: 60
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1193,7 +1193,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 578.71484
     y: 589.7035
-    width: 67.6
+    width: 62.70587
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2814,13 +2814,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6f62c397230d6d845b87a8e53d67c0e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 93512762d91371240b1381f620e2fd2a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3348,13 +3348,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6f62c397230d6d845b87a8e53d67c0e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 22a5667b93c14e9428ec74421d0141ab, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4194,13 +4194,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6f62c397230d6d845b87a8e53d67c0e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e895d063110c10342a21791929bca696, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4440,13 +4440,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6f62c397230d6d845b87a8e53d67c0e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0053b79bb382e4c4299c99714e2906cd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
