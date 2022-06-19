@@ -74,8 +74,8 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _WaveAmplitude: 0.039531223
-    - _WaveLength: 0.89257824
+    - _WaveAmplitude: 0.2
+    - _WaveLength: 0.01
     - _WavePhase: 0.09
     - _WaveSpeed: 15.5
     - _ZWrite: 1

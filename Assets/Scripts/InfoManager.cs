@@ -30,6 +30,7 @@ public class InfoManager : MonoBehaviour
     public void ShowInfo(string info){
         info_box.SetActive(true);
         lab_info.text = info;
+        StopAllCoroutines();
         StartCoroutine(Show());
     }
 

@@ -65,7 +65,7 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: 43a1034d048a340e78dea5cfdef80685, type: 3}
     pointerUpClip: {fileID: 8300000, guid: 919714d8571a24d318fd0c8276e678b2, type: 3}
     sound: 3
-    volume: 0.59
+    volume: 0.4
     offset: 0
   - clip: {fileID: 8300000, guid: dd6b7432e3c4a4800bc724fb8e6409cd, type: 3}
     pointerUpClip: {fileID: 8300000, guid: 36fe2b98a3b204aa690ae9ec41196334, type: 3}
@@ -77,8 +77,8 @@ MonoBehaviour:
     sound: 5
     volume: 0.85
     offset: 0
-  - clip: {fileID: 8300000, guid: 21b6e221c3d46461bbb65045880ffaa7, type: 3}
-    pointerUpClip: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 284a32589181b4e31837e39a2348384b, type: 3}
+    pointerUpClip: {fileID: 8300000, guid: 4186f049f44ee4cbf8dff3b3104611f8, type: 3}
     sound: 6
     volume: 1
     offset: 0

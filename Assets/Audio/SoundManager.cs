@@ -194,7 +194,7 @@ public class SoundManager : MonoBehaviour
         else
             sfxPlayer.PlayOneShot(soundBank[sound].clip);
 
-        prevenPlayback = StartCoroutine(PreventPlaybackTime(0.5f));
+        prevenPlayback = StartCoroutine(PreventPlaybackTime(0.2f));
     }
 
     public void Drunk(bool isDrunk)
