@@ -18,6 +18,6 @@ MonoBehaviour:
   FavorableEffect: 0
   End_A_Effect: 0
   End_B_Effect: 0
-  End_C_Effect: 30
+  End_C_Effect: 25
   End_D_Effect: 0
-  text: 
+  text: "\u4F86\u5C04\u5C04\u4E86\u5594"
