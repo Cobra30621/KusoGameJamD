@@ -1,16 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public abstract class InteractableObject : MonoBehaviour,IPointerEnterHandler, IPointerExitHandler
 {
     public ActiveWay ActiveWay;
     private bool isMouseInside;
-    private Vector2 mousePos
+    [SerializeField]
+    private Material defaultMaterial = null;
+    [SerializeField]
+    private Material activeMaterial = null;
+    private Image image;
+    private Vector3 mousePos
     { get { return Input.mousePosition; } }
-    private Vector2 clickPos;
-    private Vector2 originPos;
+    private Vector3 clickPos;
+    private Vector3 originPos;
     private RectTransform rectTransform;
     private bool isDraging = false;
     private bool canActive = false;
@@ -18,7 +24,8 @@ public abstract class InteractableObject : MonoBehaviour,IPointerEnterHandler, I
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
-        originPos = rectTransform.position;
+        image = GetComponent<Image>();
+        originPos = rectTransform.anchoredPosition;
     }
 
     // Update is called once per frame
@@ -34,19 +41,24 @@ public abstract class InteractableObject : MonoBehaviour,IPointerEnterHandler, I
                         clickPos = mousePos;
                         isDraging = true;
                     }
-                    if(isDraging)
-                        rectTransform.position = originPos + mousePos - clickPos;
+                    if (isDraging)
+                    {
+                        rectTransform.anchoredPosition = originPos + mousePos - clickPos;
+                        //rectTransform.anchoredPosition = new Vector3(rectTransform.position.x, rectTransform.position.y,0);
+                    }
                     break;
 
                 case ActiveWay.Click:
-                    if(Input.GetMouseButtonDown(0))
+                    if (Input.GetMouseButtonDown(0))
+                    {
                         OnActiveEvent();
+                    }
                     break;
             }
             // reset when mouse up
             if (Input.GetMouseButtonUp(0))
             {
-                rectTransform.position = originPos;
+                rectTransform.anchoredPosition = originPos;
                 isDraging = false;
                 if (canActive)
                     OnActiveEvent();
@@ -67,11 +79,19 @@ public abstract class InteractableObject : MonoBehaviour,IPointerEnterHandler, I
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (activeMaterial != null)
+        {
+            image.material = activeMaterial;
+        }
         isMouseInside = true;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        if (defaultMaterial != null)
+        {
+            image.material = defaultMaterial;
+        }
         isMouseInside = false;
     }
 }
