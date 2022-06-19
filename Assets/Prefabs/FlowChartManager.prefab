@@ -59,11 +59,8 @@ GameObject:
   - component: {fileID: 2191861002073465914}
   - component: {fileID: 2191861002073465913}
   - component: {fileID: 2191861002073465912}
-  - component: {fileID: 2191861002073465915}
   - component: {fileID: 2191861002073465918}
   - component: {fileID: 1098809387}
-  - component: {fileID: 1098809388}
-  - component: {fileID: 1098809389}
   - component: {fileID: 1098809396}
   - component: {fileID: 408172002}
   - component: {fileID: 408172003}
@@ -141,7 +138,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks: []
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 0}
   variables: []
   description: 
   stepPause: 0
@@ -178,7 +176,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 2191861002073465915}
+  - {fileID: 0}
   - {fileID: 408172015}
   suppressAllAutoSelections: 0
 --- !u!114 &2191861002073465913
@@ -206,7 +204,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 1098809389}
+  - {fileID: 0}
   - {fileID: 408172009}
   suppressAllAutoSelections: 0
 --- !u!114 &2191861002073465912
@@ -237,33 +235,6 @@ MonoBehaviour:
   - {fileID: 1098809396}
   - {fileID: 408172012}
   suppressAllAutoSelections: 0
---- !u!114 &2191861002073465915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2191861002073465859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 4
-  indentLevel: 0
-  storyText: Sing
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
 --- !u!114 &2191861002073465918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,63 +287,9 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 1098809388}
+  - {fileID: 0}
   - {fileID: 408172005}
   suppressAllAutoSelections: 0
---- !u!114 &1098809388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2191861002073465859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 37
-  indentLevel: 0
-  storyText: Game
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
---- !u!114 &1098809389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2191861002073465859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 20
-  indentLevel: 0
-  storyText: Dirty Joke
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
 --- !u!114 &1098809396
 MonoBehaviour:
   m_ObjectHideFlags: 0
