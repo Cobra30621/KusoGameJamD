@@ -96,10 +96,18 @@ public class GameManager : MonoBehaviour
         
         // ABCD 判斷    
         Ending ending = Ending.SingEnd;
-
-        if(End_B_Effect > End_A_Effect) ending = Ending.TakeSignEnd;
-        if(End_C_Effect > End_B_Effect) ending = Ending.DirtyJokeEnd;
-        if(End_D_Effect > End_C_Effect) ending = Ending.GameEnd;
+        int max = End_A_Effect;
+        if(End_B_Effect > max)
+        {
+            ending = Ending.TakeSignEnd;
+            max = End_B_Effect;
+        }
+        if(End_C_Effect > max)
+        {
+            ending = Ending.DirtyJokeEnd;
+            max = End_C_Effect;
+        }
+        if(End_D_Effect > max) ending = Ending.GameEnd;
 
         // 戀愛路線
         if(loveRoute){
