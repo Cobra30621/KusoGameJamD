@@ -916,7 +916,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u9177\u9177\u7684\u6587\u672C"
+  m_Text: "\u2764 \u4F60\u8A66\u770B\u770Bunity\u80FD\u4E0D\u80FD\u6253\u9019\u500B"
 --- !u!222 &412555903
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4293,6 +4293,11 @@ PrefabInstance:
       propertyPath: FavorableEffectUIBar
       value: 
       objectReference: {fileID: 863468780}
+    - target: {fileID: 5933239995115147138, guid: 8547b4df40961064f8c0d49ed6243c03,
+        type: 3}
+      propertyPath: infoManager
+      value: 
+      objectReference: {fileID: 1573208187}
     - target: {fileID: 8336403834517580348, guid: 8547b4df40961064f8c0d49ed6243c03,
         type: 3}
       propertyPath: m_LocalPosition.x
