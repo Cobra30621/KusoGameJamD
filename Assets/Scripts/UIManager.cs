@@ -8,12 +8,20 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
     [SerializeField]
     private GameObject fadeImageObj;
+    [SerializeField]
+    private Image loveBar;
     private Image fadeImage;
-    void Start()
+    private GameManager gameManager;
+    private void Awake()
     {
         Instance = this;
+    }
+    void Start()
+    {
         fadeImage = fadeImageObj.GetComponent<Image>();
         fadeImage.gameObject.SetActive(false);
+        gameManager = GameManager.instance;
+        gameManager.OnEndValueChange += ReflashLoveBar;
     }
 
     // Update is called once per frame
@@ -24,7 +32,6 @@ public class UIManager : MonoBehaviour
 
     public void FadeScene(float A, float time = 1)
     {
-        
         StartCoroutine(fadeEnumerator(A, time));
     }
     IEnumerator fadeEnumerator(float A,float time)
@@ -43,5 +50,10 @@ public class UIManager : MonoBehaviour
         fadeImage.color = color;
         fadeImage.gameObject.SetActive(false);
         yield break;
+    }
+
+    public void ReflashLoveBar()
+    {
+        loveBar.fillAmount = (float)gameManager.FavorableEffect / (float)gameManager.NeedFavorableEffect;
     }
 }

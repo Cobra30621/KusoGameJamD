@@ -25,11 +25,17 @@ public class GameManager : MonoBehaviour
     public EndingManager endingManager;
     public WineManager wineManager;
     public GameObject restartButton;
+    public GameObject FavorableEffectUIBar;
 
+    public delegate void EndValueChangeEvent();
+    public event EndValueChangeEvent OnEndValueChange;
 
-    void Start()
+    private void Awake()
     {
         instance = this;
+    }
+    void Start()
+    {
         Init();
     }
 
@@ -66,8 +72,9 @@ public class GameManager : MonoBehaviour
             End_C_Effect += eventData.End_C_Effect;
             End_D_Effect += eventData.End_D_Effect;
 
+            OnEndValueChange();
             // 判斷是否撥放結局
-            if(eventData.isEnding)
+            if (eventData.isEnding)
                 PlayEnding(eventData.DoEvent);
             else{
                 FlowChartManager.PlayEvent(eventData.DoEvent);
@@ -126,6 +133,7 @@ public class GameManager : MonoBehaviour
 
     public void StartLoveRoute(){
         Debug.Log("StartLoveRoute");
+        FavorableEffectUIBar.SetActive(true);
         loveRoute = true;
     }
 
