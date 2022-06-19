@@ -2444,10 +2444,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 973455081}
-  - component: {fileID: 973455085}
-  - component: {fileID: 973455084}
-  - component: {fileID: 973455083}
   - component: {fileID: 973455082}
+  - component: {fileID: 973455084}
+  - component: {fileID: 973455085}
+  - component: {fileID: 973455083}
   m_Layer: 0
   m_Name: VT_15_0
   m_TagString: Untagged
@@ -2570,7 +2570,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4616392213619589425, guid: b3f29dc261a734f4ebb614dc8c3d8b17,
+  m_Sprite: {fileID: -1251920412026342618, guid: 58425ba4e54f566478624513dc1938be,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
