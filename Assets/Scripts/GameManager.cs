@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
         loveRoute = false;
 
         restartButton.SetActive(false);
+        wineManager.CloseBlurEffect();
     }
 
     public void ReStart(){
