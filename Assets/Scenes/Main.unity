@@ -539,7 +539,7 @@ MonoBehaviour:
     animatorVal: {fileID: 973455084}
   _parameterName:
     stringRef: {fileID: 0}
-    stringVal: Invoke
+    stringVal: Angry
   animatorOLD: {fileID: 0}
   parameterNameOLD: 
 --- !u!114 &408172005
@@ -561,7 +561,7 @@ MonoBehaviour:
     animatorVal: {fileID: 973455084}
   _parameterName:
     stringRef: {fileID: 0}
-    stringVal: Invoke
+    stringVal: Gun
   animatorOLD: {fileID: 0}
   parameterNameOLD: 
 --- !u!114 &408172006 stripped
@@ -655,7 +655,7 @@ MonoBehaviour:
     animatorVal: {fileID: 973455084}
   _parameterName:
     stringRef: {fileID: 0}
-    stringVal: smile
+    stringVal: Smile
   animatorOLD: {fileID: 0}
   parameterNameOLD: 
 --- !u!114 &408172011
@@ -726,7 +726,7 @@ MonoBehaviour:
     animatorVal: {fileID: 973455084}
   _parameterName:
     stringRef: {fileID: 0}
-    stringVal: smile
+    stringVal: Sing
   animatorOLD: {fileID: 0}
   parameterNameOLD: 
 --- !u!114 &408172014
@@ -744,7 +744,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 406.90002
-    y: 24
+    y: 22
     width: 60
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -757,6 +757,84 @@ MonoBehaviour:
   - {fileID: 408172013}
   - {fileID: 408172012}
   suppressAllAutoSelections: 0
+--- !u!114 &408172015
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408172000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 486.90002
+    y: 70
+    width: 72.4
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 121
+  blockName: LoveLetter
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 408172017}
+  - {fileID: 408172016}
+  suppressAllAutoSelections: 0
+--- !u!114 &408172016
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408172000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 123
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 278181461}
+  targetComponentAssemblyName: GameManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: GameManager
+  targetMethod: StartLoveRoute
+  targetMethodText: 'StartLoveRoute (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &408172017
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408172000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0729d4f369e6a4241a6e7e3b8b9c1933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 122
+  indentLevel: 0
+  _animator:
+    animatorRef: {fileID: 0}
+    animatorVal: {fileID: 973455084}
+  _parameterName:
+    stringRef: {fileID: 0}
+    stringVal: Invoke
+  animatorOLD: {fileID: 0}
+  parameterNameOLD: 
 --- !u!114 &408172019 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 408172019, guid: 642957c59c544b44a85b728db7361f3b,
@@ -769,31 +847,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &408172042
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408172000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76641c2c16481448eb6c0c1184fcdebe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 98
-  indentLevel: 0
-  _animator:
-    animatorRef: {fileID: 0}
-    animatorVal: {fileID: 973455084}
-  _parameterName:
-    stringRef: {fileID: 0}
-    stringVal: Invoke
-  value:
-    integerRef: {fileID: 0}
-    integerVal: 0
-  animatorOLD: {fileID: 0}
-  parameterNameOLD: 
 --- !u!1 &446612505
 GameObject:
   m_ObjectHideFlags: 0
@@ -5532,12 +5585,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 408172022, guid: 642957c59c544b44a85b728db7361f3b, type: 3}
       propertyPath: nodeRect.width
-      value: 112.41758
+      value: 72.4
       objectReference: {fileID: 0}
     - target: {fileID: 408172022, guid: 642957c59c544b44a85b728db7361f3b, type: 3}
       propertyPath: commandList.Array.data[1]
       value: 
-      objectReference: {fileID: 408172042}
+      objectReference: {fileID: 0}
+    - target: {fileID: 408172022, guid: 642957c59c544b44a85b728db7361f3b, type: 3}
+      propertyPath: commandList.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 408172022, guid: 642957c59c544b44a85b728db7361f3b, type: 3}
+      propertyPath: nodeRect.y
+      value: 105
+      objectReference: {fileID: 0}
     - target: {fileID: 408172025, guid: 642957c59c544b44a85b728db7361f3b, type: 3}
       propertyPath: targetObject
       value: 
@@ -5761,6 +5822,8 @@ PrefabInstance:
     - {fileID: 2191861002073465914, guid: 642957c59c544b44a85b728db7361f3b, type: 3}
     - {fileID: 2191861002073465913, guid: 642957c59c544b44a85b728db7361f3b, type: 3}
     - {fileID: 1098809387, guid: 642957c59c544b44a85b728db7361f3b, type: 3}
+    - {fileID: 408172025, guid: 642957c59c544b44a85b728db7361f3b, type: 3}
+    - {fileID: 408172022, guid: 642957c59c544b44a85b728db7361f3b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 642957c59c544b44a85b728db7361f3b, type: 3}
 --- !u!1 &2094151420
 GameObject:
