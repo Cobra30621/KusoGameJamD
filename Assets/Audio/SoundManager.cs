@@ -71,6 +71,7 @@ public class SoundManager : MonoBehaviour
 
     IEnumerator PlayMusic(Music music)
     {
+
         if (!musicBank.ContainsKey(music) || musicBank[music].audioClip == null )
             yield break;
 
@@ -203,7 +204,7 @@ public class SoundManager : MonoBehaviour
 public enum Sound
 {
     Sing, TakeSign, DirtyJoke, Game,
-    LoveLetter, Wine,Shit
+    LoveLetter, Wine,Shit,StartGame,ExitGame
 }
 
 public enum Music
