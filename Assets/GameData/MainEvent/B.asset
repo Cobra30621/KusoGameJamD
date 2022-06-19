@@ -15,9 +15,9 @@ MonoBehaviour:
   isEnding: 0
   ID: 
   DoEvent: 1
-  FavorableEffect: 0
+  FavorableEffect: 75
   End_A_Effect: 0
-  End_B_Effect: 50
+  End_B_Effect: 70
   End_C_Effect: 0
   End_D_Effect: 0
   text: "\u6E1B\u901F\u6162\u884C\uFF01"

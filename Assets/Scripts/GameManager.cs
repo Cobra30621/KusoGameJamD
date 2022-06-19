@@ -80,7 +80,8 @@ public class GameManager : MonoBehaviour
                 PlayEnding(eventData.DoEvent);
             else{
                 FlowChartManager.PlayEvent(eventData.DoEvent);
-                infoManager.ShowInfo(eventData.text);
+                if(eventData.DoEvent != EventType.Wine)
+                    infoManager.ShowInfo(eventData.text);
             }
         }
     }
