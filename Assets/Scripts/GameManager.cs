@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     public List<EventData> eventList;
     public EndingManager endingManager;
+    public InfoManager infoManager;
     public WineManager wineManager;
     public GameObject restartButton;
     public GameObject FavorableEffectUIBar;
@@ -79,6 +80,7 @@ public class GameManager : MonoBehaviour
                 PlayEnding(eventData.DoEvent);
             else{
                 FlowChartManager.PlayEvent(eventData.DoEvent);
+                infoManager.ShowInfo(eventData.text);
             }
         }
     }
