@@ -19,5 +19,5 @@ MonoBehaviour:
   End_A_Effect: 25
   End_B_Effect: 0
   End_C_Effect: 0
-  End_D_Effect: 10
+  End_D_Effect: 20
   text: "\u5E78\u597D\u8DEF\u4E0A\u6C92\u585E\u8ECA\uFF0C\u9084\u6709\u6642\u9593\u5531\u6B4C\u73A9\u904A\u6232\uFF01"

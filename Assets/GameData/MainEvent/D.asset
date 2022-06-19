@@ -15,9 +15,9 @@ MonoBehaviour:
   isEnding: 0
   ID: 
   DoEvent: 3
-  FavorableEffect: 0
+  FavorableEffect: 30
   End_A_Effect: 0
   End_B_Effect: 0
-  End_C_Effect: 25
-  End_D_Effect: 0
+  End_C_Effect: 0
+  End_D_Effect: 40
   text: "\u4F86\u5C04\u5C04\u4E86\u5594"

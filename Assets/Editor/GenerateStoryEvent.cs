@@ -22,11 +22,11 @@ public class GenerateStoryEvent : Editor
             useID_i = ID_i[i];
             EventData eventData = CreateInstance<EventData>();
             eventData.DoEvent = (EventType)storyEventData.Event[ID_i[i]];
-            eventData.FavorableEffect = (int)((Array)(storyEventData.GetType().GetField(EventID[i] + "_FavorableEffect").GetValue(storyEventData))).GetValue(i);
-            eventData.End_A_Effect = (int)((Array)(storyEventData.GetType().GetField(EventID[i] + "_End_A_Effect").GetValue(storyEventData))).GetValue(i);
-            eventData.End_B_Effect = (int)((Array)(storyEventData.GetType().GetField(EventID[i] + "_End_B_Effect").GetValue(storyEventData))).GetValue(i);
-            eventData.End_C_Effect = (int)((Array)(storyEventData.GetType().GetField(EventID[i] + "_End_C_Effect").GetValue(storyEventData))).GetValue(i);
-            eventData.End_D_Effect = (int)((Array)(storyEventData.GetType().GetField(EventID[i] + "_End_D_Effect").GetValue(storyEventData))).GetValue(i);
+            eventData.FavorableEffect = (int)((Array)(storyEventData.GetType().GetField(EventID[i] + "_FavorableEffect").GetValue(storyEventData))).GetValue(0);
+            eventData.End_A_Effect = (int)((Array)(storyEventData.GetType().GetField(EventID[i] + "_End_A_Effect").GetValue(storyEventData))).GetValue(0);
+            eventData.End_B_Effect = (int)((Array)(storyEventData.GetType().GetField(EventID[i] + "_End_B_Effect").GetValue(storyEventData))).GetValue(0);
+            eventData.End_C_Effect = (int)((Array)(storyEventData.GetType().GetField(EventID[i] + "_End_C_Effect").GetValue(storyEventData))).GetValue(0);
+            eventData.End_D_Effect = (int)((Array)(storyEventData.GetType().GetField(EventID[i] + "_End_D_Effect").GetValue(storyEventData))).GetValue(0);
             eventData.text = (string)((Array)(storyEventData.GetType().GetField(EventID[i] + "_text").GetValue(storyEventData))).GetValue(i);
             ID_i.RemoveAt(i);
             AssetDatabase.CreateAsset(eventData, "Assets/GameData/MainEvent/" + useID_i + ".asset");
@@ -103,9 +103,9 @@ public class GenerateStoryEvent : Editor
 
         public int[] B_FavorableEffect = { 75, 0, 0, 50 };
         public int[] B_End_A_Effect = { 0, 0, 25, 0 };
-        public int[] B_End_B_Effect = { 75, 50, 0, 0 };
+        public int[] B_End_B_Effect = { 70, 50, 0, 0 };
         public int[] B_End_C_Effect = { 0, 0, 0, 0 };
-        public int[] B_End_D_Effect = { 0, 0, 10, 0 };
+        public int[] B_End_D_Effect = { 0, 0, 20, 0 };
         public string[] B_text = { "過馬路要減速慢行喔！謝謝好野人關心", "減速慢行！", "幸好路上沒塞車，還有時間唱歌玩遊戲！", "減速慢行，關心石虎" };
 
         public int[] C_FavorableEffect = { 0, 0, 30, 0 };
