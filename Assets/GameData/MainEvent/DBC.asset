@@ -15,8 +15,9 @@ MonoBehaviour:
   isEnding: 0
   ID: 
   DoEvent: 2
-  FavorableEffect: 0
+  FavorableEffect: 30
   End_A_Effect: 0
   End_B_Effect: 0
-  End_C_Effect: 0
+  End_C_Effect: 75
   End_D_Effect: 0
+  text: 

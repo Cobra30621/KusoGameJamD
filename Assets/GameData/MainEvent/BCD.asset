@@ -19,4 +19,5 @@ MonoBehaviour:
   End_A_Effect: 0
   End_B_Effect: 0
   End_C_Effect: 0
-  End_D_Effect: 0
+  End_D_Effect: 30
+  text: 

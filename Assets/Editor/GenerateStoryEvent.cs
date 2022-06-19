@@ -27,6 +27,7 @@ public class GenerateStoryEvent : Editor
             eventData.End_B_Effect = (int)((Array)(storyEventData.GetType().GetField(EventID[i] + "_End_B_Effect").GetValue(storyEventData))).GetValue(i);
             eventData.End_C_Effect = (int)((Array)(storyEventData.GetType().GetField(EventID[i] + "_End_C_Effect").GetValue(storyEventData))).GetValue(i);
             eventData.End_D_Effect = (int)((Array)(storyEventData.GetType().GetField(EventID[i] + "_End_D_Effect").GetValue(storyEventData))).GetValue(i);
+            eventData.text = (string)((Array)(storyEventData.GetType().GetField(EventID[i] + "_text").GetValue(storyEventData))).GetValue(i);
             ID_i.RemoveAt(i);
             AssetDatabase.CreateAsset(eventData, "Assets/GameData/MainEvent/" + useID_i + ".asset");
             AssetDatabase.SaveAssets();
@@ -43,6 +44,7 @@ public class GenerateStoryEvent : Editor
                 eventData.End_B_Effect = (int)((Array)(storyEventData.GetType().GetField(ID_j[j] + "_End_B_Effect").GetValue(storyEventData))).GetValue(1);
                 eventData.End_C_Effect = (int)((Array)(storyEventData.GetType().GetField(ID_j[j] + "_End_C_Effect").GetValue(storyEventData))).GetValue(1);
                 eventData.End_D_Effect = (int)((Array)(storyEventData.GetType().GetField(ID_j[j] + "_End_D_Effect").GetValue(storyEventData))).GetValue(1);
+                eventData.text = (string)((Array)(storyEventData.GetType().GetField(ID_j[j] + "_text").GetValue(storyEventData))).GetValue(1);
                 AssetDatabase.CreateAsset(eventData, "Assets/GameData/MainEvent/" + useID_j + ".asset");
                 AssetDatabase.SaveAssets();
                 ID_j.RemoveAt(j);
@@ -59,6 +61,7 @@ public class GenerateStoryEvent : Editor
                     eventData.End_B_Effect = (int)((Array)(storyEventData.GetType().GetField(ID_n[n] + "_End_B_Effect").GetValue(storyEventData))).GetValue(2);
                     eventData.End_C_Effect = (int)((Array)(storyEventData.GetType().GetField(ID_n[n] + "_End_C_Effect").GetValue(storyEventData))).GetValue(2);
                     eventData.End_D_Effect = (int)((Array)(storyEventData.GetType().GetField(ID_n[n] + "_End_D_Effect").GetValue(storyEventData))).GetValue(2);
+                    eventData.text = (string)((Array)(storyEventData.GetType().GetField(ID_n[n] + "_text").GetValue(storyEventData))).GetValue(2);
                     AssetDatabase.CreateAsset(eventData, "Assets/GameData/MainEvent/" + useID_n + ".asset");
                     AssetDatabase.SaveAssets();
                     ID_n.RemoveAt(n);
@@ -71,6 +74,7 @@ public class GenerateStoryEvent : Editor
                     eventData.End_B_Effect = (int)((Array)(storyEventData.GetType().GetField(ID_n[0] + "_End_B_Effect").GetValue(storyEventData))).GetValue(3);
                     eventData.End_C_Effect = (int)((Array)(storyEventData.GetType().GetField(ID_n[0] + "_End_C_Effect").GetValue(storyEventData))).GetValue(3);
                     eventData.End_D_Effect = (int)((Array)(storyEventData.GetType().GetField(ID_n[0] + "_End_D_Effect").GetValue(storyEventData))).GetValue(3);
+                    eventData.text = (string)((Array)(storyEventData.GetType().GetField(ID_n[0] + "_text").GetValue(storyEventData))).GetValue(3);
                     AssetDatabase.CreateAsset(eventData, "Assets/GameData/MainEvent/" + useID_n + ".asset");
                     AssetDatabase.SaveAssets();
                 }
@@ -92,26 +96,30 @@ public class GenerateStoryEvent : Editor
 
         public int[] A_FavorableEffect = { 30, 10, 0, 0 };
         public int[] A_End_A_Effect = { 80, 50, 25, 0 };
-        public int[] A_End_B_Effect = { 0, 0, 0, 0 };
+        public int[] A_End_B_Effect = { 0, 0, 0, 30 };
         public int[] A_End_C_Effect = { 0, 0, 0, 0 };
         public int[] A_End_D_Effect = { 0, 0, 0, 0 };
+        public string[] A_text = { "", "", "", "" };
 
-        public int[] B_FavorableEffect = { 30, 10, 0, 0 };
-        public int[] B_End_A_Effect = { 0, 0, 0, 0 };
-        public int[] B_End_B_Effect = { 0, 0, 0, 0 };
+        public int[] B_FavorableEffect = { 75, 0, 0, 50 };
+        public int[] B_End_A_Effect = { 0, 0, 25, 0 };
+        public int[] B_End_B_Effect = { 75, 50, 0, 0 };
         public int[] B_End_C_Effect = { 0, 0, 0, 0 };
-        public int[] B_End_D_Effect = { 0, 0, 0, 0 };
+        public int[] B_End_D_Effect = { 0, 0, 10, 0 };
+        public string[] B_text = { "", "", "", "" };
 
-        public int[] C_FavorableEffect = { 30, 10, 0, 0 };
-        public int[] C_End_A_Effect = { 0, 0, 0, 0 };
+        public int[] C_FavorableEffect = { 0, 0, 30, 0 };
+        public int[] C_End_A_Effect = { 20, 0, 0, 0 };
         public int[] C_End_B_Effect = { 0, 0, 0, 0 };
-        public int[] C_End_C_Effect = { 0, 0, 0, 0 };
-        public int[] C_End_D_Effect = { 0, 0, 0, 0 };
+        public int[] C_End_C_Effect = { 0, 30, 75, 0 };
+        public int[] C_End_D_Effect = { 30, 0, 0, 0 };
+        public string[] C_text = { "", "", "", "" };
 
-        public int[] D_FavorableEffect = { 30, 10, 0, 0 };
+        public int[] D_FavorableEffect = { 30, 0, 0, 0 };
         public int[] D_End_A_Effect = { 0, 0, 0, 0 };
         public int[] D_End_B_Effect = { 0, 0, 0, 0 };
-        public int[] D_End_C_Effect = { 0, 0, 0, 0 };
-        public int[] D_End_D_Effect = { 0, 0, 0, 0 };
+        public int[] D_End_C_Effect = { 0, 0, 0, 30 };
+        public int[] D_End_D_Effect = { 40, 65, 30, 0 };
+        public string[] D_text = { "", "", "", "" };
     }
 }

@@ -13,4 +13,5 @@ public class EventData : ScriptableObject
     public int End_B_Effect;
     public int End_C_Effect;
     public int End_D_Effect;
+    public string text;
 }
