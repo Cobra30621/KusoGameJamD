@@ -1680,7 +1680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff95405868bd1b14dbb7b61618f6cbfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActiveWay: 1
+  ActiveWay: 0
   defaultMaterial: {fileID: 2100000, guid: 3cdc39cacfb912c439052118e6a794bc, type: 2}
   activeMaterial: {fileID: 2100000, guid: 76ff68f880a0d7a428caeb7693756251, type: 2}
   isABCD: 0
