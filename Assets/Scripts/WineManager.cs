@@ -36,7 +36,7 @@ public class WineManager : MonoBehaviour
             timeOver = true;
             GameManager.instance.PlayEnding(EventType.WineEnd);
         }
-        lab_time.text = "Time : " + Mathf.Ceil(timer);
+        lab_time.text = " 00:" + Mathf.Ceil(timer).ToString("00");
     }
 
     public void Clear(){
