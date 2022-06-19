@@ -34,6 +34,20 @@ public class BreatheEffect : MonoBehaviour
         tween1.Play();
     }
 
+    private void OnDisable()
+    {
+        if(tween1 != null)
+        {
+            tween1.Pause();
+            tween1 = null;
+        }
+        if (tween2 != null)
+        {
+            tween2.Pause();
+            tween2 = null;
+        }
+    }
+
     private void CheckRePlay()
     {
         if (loop)
