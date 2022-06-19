@@ -34,6 +34,9 @@ public class WineManager : MonoBehaviour
         if(timeOver || cleared){return;}
 
         timer -= Time.deltaTime;
+
+        blurPostEffect.SetEffectAttritube(timer);
+
         if(timer < 0){
             timeOver = true;
             
