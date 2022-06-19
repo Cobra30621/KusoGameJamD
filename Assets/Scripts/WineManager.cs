@@ -12,6 +12,7 @@ public class WineManager : MonoBehaviour
     public bool timeOver; // once set to true, the microgame will exit
 
     public GameObject winePanel; 
+    public BlurPostEffect blurPostEffect;
     public Text lab_time;
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class WineManager : MonoBehaviour
         timeOver = false;
         timer = start_time;
         winePanel.SetActive(true);
+        blurPostEffect.enabled = true;
     }
 
     // Update is called once per frame
@@ -34,6 +36,7 @@ public class WineManager : MonoBehaviour
         timer -= Time.deltaTime;
         if(timer < 0){
             timeOver = true;
+            
             GameManager.instance.PlayEnding(EventType.WineEnd);
         }
         lab_time.text = " 00:" + Mathf.Ceil(timer).ToString("00");
@@ -42,5 +45,10 @@ public class WineManager : MonoBehaviour
     public void Clear(){
         cleared = true;
         winePanel.SetActive(false);
+        CloseBlurEffect();
+    }
+
+    public void CloseBlurEffect(){
+        blurPostEffect.enabled = false;
     }
 }
