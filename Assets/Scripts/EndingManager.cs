@@ -9,6 +9,7 @@ public class EndingManager : MonoBehaviour
     public List<EndBar> endBarList;
     public GameObject endBarPrefab;
     public Transform endPanelPos;
+    public Ending currrntEnding;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,15 +55,19 @@ public class EndingManager : MonoBehaviour
     }
 
 
-    public void ShowEndImage(Ending ending){
+    public void SetCurrentEnd(Ending ending){
+        currrntEnding = ending;
+    }
+
+    public void ShowEndImage(){
         foreach (EndingData end in endings){
-            if(end.ending == ending){
+            if(end.ending == currrntEnding){
                 end.endObj.SetActive(true);
                 return;
             }
             
         }
-        Debug.Log($"沒有結局{ending}");
+        Debug.Log($"沒有結局{currrntEnding}");
     }
 
     

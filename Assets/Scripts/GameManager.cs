@@ -123,7 +123,7 @@ public class GameManager : MonoBehaviour
         if(eventType == EventType.LeaveEnd) ending = Ending.LeaveEnd;
 
         
-        endingManager.ShowEndImage(ending);
+        endingManager.SetCurrentEnd(ending);
         FlowChartManager.PlayEnd(ending);
         // FlowChartManager.PlayBlockByString("AfterEnd");
         wineManager.Clear(); // 結束倒數

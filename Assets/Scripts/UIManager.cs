@@ -30,24 +30,27 @@ public class UIManager : MonoBehaviour
         
     }
 
-    public void FadeScene(float A, float time = 1)
+    public void FadeScene(float A, float fadeTime = 1, float waitTime = 0)
     {
-        StartCoroutine(fadeEnumerator(A, time));
+        StopAllCoroutines();
+        StartCoroutine(fadeEnumerator(A, fadeTime, waitTime));
     }
-    IEnumerator fadeEnumerator(float A,float time)
+    IEnumerator fadeEnumerator(float A,float fadeTime, float waitTime)
     {
         fadeImage.gameObject.SetActive(true);
         Color color = Color.black;
         float startTime = Time.time;
         float startA = fadeImage.color.a;
-        while(Time.time-startTime < time)
+        while(Time.time-startTime < fadeTime)
         {
-            color.a = startA + (A-startA)*((Time.time - startTime)/time);
+            color.a = startA + (A-startA)*((Time.time - startTime)/fadeTime);
             fadeImage.color = color;
             yield return null;
         }
         color.a = A;
         fadeImage.color = color;
+
+        yield return new WaitForSeconds(waitTime);
         fadeImage.gameObject.SetActive(false);
         yield break;
     }
