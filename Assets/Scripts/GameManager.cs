@@ -126,11 +126,14 @@ public class GameManager : MonoBehaviour
         endingManager.SetCurrentEnd(ending);
         FlowChartManager.PlayEnd(ending);
         // FlowChartManager.PlayBlockByString("AfterEnd");
-        wineManager.Clear(); // 結束倒數
+        
         endingManager.GainEnd(ending);
 
     }
 
+    public void CloseWineEffect(){
+        wineManager.Clear(); // 結束倒數
+    }
     public EventData GetEventData(string id){
         foreach (EventData eventData in eventList){
             if(eventData.name == id){
