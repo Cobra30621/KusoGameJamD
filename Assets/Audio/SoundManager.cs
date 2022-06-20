@@ -213,7 +213,7 @@ public class SoundManager : MonoBehaviour
 public enum Sound
 {
     Sing, TakeSign, DirtyJoke, Game,
-    LoveLetter, Wine,Shit,StartGame,ExitGame, StopDrunk
+    LoveLetter, Wine,Shit,StartGame,ExitGame, StopDrunk, Hello
 }
 
 public enum Music

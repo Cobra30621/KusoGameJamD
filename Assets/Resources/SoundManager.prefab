@@ -48,7 +48,7 @@ MonoBehaviour:
   sfxPlayer: {fileID: 3109420919183503475}
   soundList:
   - clip: {fileID: 8300000, guid: 490f1d4d60c4e4818b31cbe5a10b0b2a, type: 3}
-    pointerUpClip: {fileID: 8300000, guid: 518bddec0eb9d47c995bbfe95190167f, type: 3}
+    pointerUpClip: {fileID: 8300000, guid: 21809e3ab0c277c499ca9aa2df62cf42, type: 3}
     sound: 0
     volume: 0.85
     offset: 0
@@ -58,7 +58,7 @@ MonoBehaviour:
     volume: 0.95
     offset: 0
   - clip: {fileID: 8300000, guid: 79f48b3bee3d940f395e212527c95bd4, type: 3}
-    pointerUpClip: {fileID: 8300000, guid: 69b6bb61c6ceb44258913e32939561da, type: 3}
+    pointerUpClip: {fileID: 8300000, guid: 80b1a0dcac3db99469ca562e1dbf2981, type: 3}
     sound: 2
     volume: 1
     offset: 0
@@ -90,6 +90,11 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: a73079ce6d44948e8b8ee84161d8c672, type: 3}
     pointerUpClip: {fileID: 8300000, guid: 04a03558b30574c92a5f620016f46619, type: 3}
     sound: 8
+    volume: 0.85
+    offset: 0
+  - clip: {fileID: 8300000, guid: aec4bbc2954380f4b95e2c1c35bb9a85, type: 3}
+    pointerUpClip: {fileID: 8300000, guid: aec4bbc2954380f4b95e2c1c35bb9a85, type: 3}
+    sound: 10
     volume: 0.85
     offset: 0
   musicPlayer: {fileID: 3109420919187162990}
