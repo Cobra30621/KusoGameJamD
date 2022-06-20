@@ -97,6 +97,36 @@ MonoBehaviour:
     sound: 10
     volume: 0.85
     offset: 0
+  - clip: {fileID: 8300000, guid: 966d98447dbeab243bb5784b864cb814, type: 3}
+    pointerUpClip: {fileID: 8300000, guid: 966d98447dbeab243bb5784b864cb814, type: 3}
+    sound: 11
+    volume: 0.85
+    offset: 0
+  - clip: {fileID: 8300000, guid: 9328cb81f6d40f5489f805bbd2617fbd, type: 3}
+    pointerUpClip: {fileID: 8300000, guid: 9328cb81f6d40f5489f805bbd2617fbd, type: 3}
+    sound: 12
+    volume: 0.85
+    offset: 0
+  - clip: {fileID: 8300000, guid: 07030c66f5058e542a793ddf5b3d983b, type: 3}
+    pointerUpClip: {fileID: 8300000, guid: 07030c66f5058e542a793ddf5b3d983b, type: 3}
+    sound: 13
+    volume: 0.85
+    offset: 0
+  - clip: {fileID: 8300000, guid: 9537e59fda090ee4bb3454109e23c501, type: 3}
+    pointerUpClip: {fileID: 8300000, guid: 9537e59fda090ee4bb3454109e23c501, type: 3}
+    sound: 14
+    volume: 0.85
+    offset: 0
+  - clip: {fileID: 8300000, guid: 457e0ad54863c124694d97d2ff69be61, type: 3}
+    pointerUpClip: {fileID: 8300000, guid: 457e0ad54863c124694d97d2ff69be61, type: 3}
+    sound: 15
+    volume: 0.85
+    offset: 0
+  - clip: {fileID: 8300000, guid: cb86217cee0e3654a938052b07dffac5, type: 3}
+    pointerUpClip: {fileID: 8300000, guid: cb86217cee0e3654a938052b07dffac5, type: 3}
+    sound: 16
+    volume: 0.85
+    offset: 0
   musicPlayer: {fileID: 3109420919187162990}
   musicList:
   - audioClip: {fileID: 8300000, guid: feb4677bed7c73b4ea14f77569dab333, type: 3}

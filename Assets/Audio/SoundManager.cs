@@ -169,6 +169,11 @@ public class SoundManager : MonoBehaviour
 
     }
 
+    public void Stop()
+    {
+        sfxPlayer.Stop();
+    }
+
     private void Stop(Sound sound)
     {
         sfxPlayer.Stop();
@@ -183,6 +188,11 @@ public class SoundManager : MonoBehaviour
         isPreventPlayback = false;
     }
 
+    public void PlayEndSound(Sound sound){
+        sfxPlayer.PlayOneShot(soundBank[sound].clip); 
+        Debug.Log($"Play:{sound}");
+    }
+
 
     public void PlayPointerEvent(Sound sound, bool isPointerUp)
     {
@@ -193,6 +203,7 @@ public class SoundManager : MonoBehaviour
             sfxPlayer.PlayOneShot(soundBank[sound].pointerUpClip); 
         else
             sfxPlayer.PlayOneShot(soundBank[sound].clip);
+        
 
         prevenPlayback = StartCoroutine(PreventPlaybackTime(0.2f));
     }
@@ -213,7 +224,8 @@ public class SoundManager : MonoBehaviour
 public enum Sound
 {
     Sing, TakeSign, DirtyJoke, Game,
-    LoveLetter, Wine,Shit,StartGame,ExitGame, StopDrunk, Hello
+    LoveLetter, Wine,Shit,StartGame,ExitGame, StopDrunk, Hello,
+    DirtyJokeEnd, WineEnd, GameEnd, LoveFailEnd, LoveSuccessEnd, SingEnd
 }
 
 public enum Music

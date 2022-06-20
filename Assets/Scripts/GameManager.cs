@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
 
         restartButton.SetActive(false);
         wineManager.CloseBlurEffect();
+        SoundManager.Instance.Stop(); // 重啟關掉聲音
     }
 
     public void ReStart(){

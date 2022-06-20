@@ -11,6 +11,7 @@ public class EndingManager : MonoBehaviour
     public Transform endPanelPos;
     public Ending currrntEnding;
     public GameObject closeEndButton;
+    public Sound soundType;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +61,7 @@ public class EndingManager : MonoBehaviour
         SetCurrentEnd(ending);
         ShowEndImage();
         ShowTwitter();
+        PlayEndingSound();
         closeEndButton.SetActive(true);
     }
 
@@ -69,6 +71,7 @@ public class EndingManager : MonoBehaviour
         }
 
         closeEndButton.SetActive(false);
+        SoundManager.Instance.Stop();
     }
 
     public void SetCurrentEnd(Ending ending){
@@ -95,6 +98,43 @@ public class EndingManager : MonoBehaviour
             
         }
         Debug.Log($"沒有結局{currrntEnding}");
+    }
+
+    
+
+    public void PlayEndingSound(){
+        bool hadEndSound = true;
+        // 先用蠢一點的方式
+        switch(currrntEnding){
+            case Ending.SingEnd:
+                soundType = Sound.SingEnd;
+                break;
+            case Ending.DirtyJokeEnd:
+                soundType = Sound.DirtyJokeEnd;
+                break;
+            case Ending.GameEnd:
+                soundType = Sound.GameEnd;
+                break;
+            case Ending.LoveFalseEnd:
+                soundType = Sound.LoveFailEnd;
+                break;
+            case Ending.LoveSuccessEnd:
+                soundType = Sound.LoveSuccessEnd;
+                break;
+            case Ending.WineEnd:
+                soundType = Sound.WineEnd;
+                break;
+            default:
+                hadEndSound = false;
+                break;
+        }
+
+
+        if(hadEndSound){
+            SoundManager.Instance.Stop();
+            SoundManager.Instance.PlayEndSound(soundType);
+        }
+            
     }
 
     
