@@ -10,15 +10,17 @@ public class EndingManager : MonoBehaviour
     public GameObject endBarPrefab;
     public Transform endPanelPos;
     public Ending currrntEnding;
+    public GameObject closeEndButton;
     // Start is called before the first frame update
     void Start()
     {
+        closeEndButton.SetActive(false);
         foreach (EndingData end in endings){
             // end.Init();
             string key = end.ending.ToString();
             end.finish = (PlayerPrefs.GetInt(key, 0)!=0);
         }
-        UpdateEndIcons();
+         CreateEndBars();
     }
 
     public void GainEnd(Ending ending){
@@ -43,17 +45,31 @@ public class EndingManager : MonoBehaviour
     }
 
 
-    public void UpdateEndIcons(){
+    public void CreateEndBars(){
         foreach (EndingData end in endings)
         {
             GameObject prefab = Instantiate(endBarPrefab, endPanelPos);
             EndBar endBar = prefab.GetComponent<EndBar>();
 
-            endBar.SetIcon(end.finish, end.icon);
+            endBar.Init(end, this);
             endBarList.Add(endBar);
         }
     }
 
+    public void PlayEndingByEndBar(Ending ending){
+        SetCurrentEnd(ending);
+        ShowEndImage();
+        ShowTwitter();
+        closeEndButton.SetActive(true);
+    }
+
+    public void CloseEnd(){
+        foreach (EndingData end in endings){
+            end.endObj.gameObject.SetActive(false);
+        }
+
+        closeEndButton.SetActive(false);
+    }
 
     public void SetCurrentEnd(Ending ending){
         currrntEnding = ending;
@@ -70,6 +86,17 @@ public class EndingManager : MonoBehaviour
         Debug.Log($"沒有結局{currrntEnding}");
     }
 
+    public void ShowTwitter(){
+        foreach (EndingData end in endings){
+            if(end.ending == currrntEnding){
+                end.twitterImage.SetActive(true);
+                return;
+            }
+            
+        }
+        Debug.Log($"沒有結局{currrntEnding}");
+    }
+
     
 }
 
@@ -79,6 +106,7 @@ public class EndingData{
     public bool finish;
     public Sprite icon;
     public GameObject endObj;
+    public GameObject twitterImage;
 
     public void Init(){
         finish = false;
