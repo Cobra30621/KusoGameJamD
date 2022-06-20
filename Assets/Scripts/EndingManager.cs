@@ -124,6 +124,15 @@ public class EndingManager : MonoBehaviour
             case Ending.WineEnd:
                 soundType = Sound.WineEnd;
                 break;
+            case Ending.KusoEnd:
+                soundType = Sound.KusoEnd;
+                break;
+            case Ending.LeaveEnd:
+                soundType = Sound.LeaveEnd;
+                break;
+            case Ending.TakeSignEnd:
+                soundType = Sound.TakeSignEnd;
+                break;
             default:
                 hadEndSound = false;
                 break;

@@ -225,7 +225,8 @@ public enum Sound
 {
     Sing, TakeSign, DirtyJoke, Game,
     LoveLetter, Wine,Shit,StartGame,ExitGame, StopDrunk, Hello,
-    DirtyJokeEnd, WineEnd, GameEnd, LoveFailEnd, LoveSuccessEnd, SingEnd
+    DirtyJokeEnd, WineEnd, GameEnd, LoveFailEnd, LoveSuccessEnd, SingEnd, 
+    KusoEnd, LeaveEnd, TakeSignEnd
 }
 
 public enum Music
