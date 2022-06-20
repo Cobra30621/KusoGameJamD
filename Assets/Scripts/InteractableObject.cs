@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public abstract class InteractableObject : MonoBehaviour,IPointerEnterHandler, IPointerExitHandler
+public abstract class InteractableObject : MonoBehaviour,IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler , IPointerUpHandler
 {
     public ActiveWay ActiveWay;
     private bool isMouseInside;
@@ -14,6 +14,8 @@ public abstract class InteractableObject : MonoBehaviour,IPointerEnterHandler, I
     private Material activeMaterial = null;
     [SerializeField]
     private Material activeRangeMaterial = null;
+    [SerializeField]
+    private Image img_activeRange;
     private Image image;
     private Vector3 mousePos
     { get { return Input.mousePosition; } }
@@ -79,7 +81,7 @@ public abstract class InteractableObject : MonoBehaviour,IPointerEnterHandler, I
     {
         if (collision.gameObject.name == "ActiveRange"){
             canActive = false;
-            collision.GetComponent<Image>().material =  defaultMaterial;
+            
         }
             
     }
@@ -91,8 +93,30 @@ public abstract class InteractableObject : MonoBehaviour,IPointerEnterHandler, I
         {
             image.material = activeMaterial;
         }
+
+        
         isMouseInside = true;
     }
+
+    //Detect current clicks on the GameObject (the one with the script attached)
+    public void OnPointerDown(PointerEventData pointerEventData)
+    {
+        //Output the name of the GameObject that is being clicked
+        Debug.Log(name + "Game Object Click in Progress");
+        if((img_activeRange != null) && (activeRangeMaterial != null)){
+            img_activeRange.material = activeRangeMaterial;
+        }
+    }
+
+    //Detect if clicks are no longer registering
+    public void OnPointerUp(PointerEventData pointerEventData)
+    {
+        Debug.Log(name + "No longer being clicked");
+        if((img_activeRange != null) && (activeRangeMaterial != null)){
+            img_activeRange.material = defaultMaterial;
+        }
+    }
+
 
     public void OnPointerExit(PointerEventData eventData)
     {

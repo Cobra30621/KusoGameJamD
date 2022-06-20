@@ -1651,6 +1651,7 @@ MonoBehaviour:
   defaultMaterial: {fileID: 2100000, guid: 3cdc39cacfb912c439052118e6a794bc, type: 2}
   activeMaterial: {fileID: 2100000, guid: 76ff68f880a0d7a428caeb7693756251, type: 2}
   activeRangeMaterial: {fileID: 2100000, guid: f95b2991890e3b540a5a3b575f260a0a, type: 2}
+  img_activeRange: {fileID: 446612509}
   isABCD: 0
   eventType: 7
 --- !u!222 &676204669
@@ -2209,6 +2210,7 @@ MonoBehaviour:
   defaultMaterial: {fileID: 2100000, guid: 3cdc39cacfb912c439052118e6a794bc, type: 2}
   activeMaterial: {fileID: 2100000, guid: 76ff68f880a0d7a428caeb7693756251, type: 2}
   activeRangeMaterial: {fileID: 2100000, guid: f95b2991890e3b540a5a3b575f260a0a, type: 2}
+  img_activeRange: {fileID: 446612509}
   isABCD: 1
   eventType: 0
 --- !u!222 &963171916
@@ -2502,6 +2504,7 @@ MonoBehaviour:
   defaultMaterial: {fileID: 2100000, guid: 3cdc39cacfb912c439052118e6a794bc, type: 2}
   activeMaterial: {fileID: 2100000, guid: 76ff68f880a0d7a428caeb7693756251, type: 2}
   activeRangeMaterial: {fileID: 2100000, guid: f95b2991890e3b540a5a3b575f260a0a, type: 2}
+  img_activeRange: {fileID: 446612509}
   isABCD: 0
   eventType: 4
 --- !u!222 &1008974626
@@ -2648,6 +2651,7 @@ MonoBehaviour:
   defaultMaterial: {fileID: 2100000, guid: 3cdc39cacfb912c439052118e6a794bc, type: 2}
   activeMaterial: {fileID: 2100000, guid: 76ff68f880a0d7a428caeb7693756251, type: 2}
   activeRangeMaterial: {fileID: 2100000, guid: f95b2991890e3b540a5a3b575f260a0a, type: 2}
+  img_activeRange: {fileID: 446612509}
   isABCD: 0
   eventType: 5
 --- !u!222 &1011967374
@@ -2794,6 +2798,7 @@ MonoBehaviour:
   defaultMaterial: {fileID: 2100000, guid: 3cdc39cacfb912c439052118e6a794bc, type: 2}
   activeMaterial: {fileID: 2100000, guid: 76ff68f880a0d7a428caeb7693756251, type: 2}
   activeRangeMaterial: {fileID: 2100000, guid: f95b2991890e3b540a5a3b575f260a0a, type: 2}
+  img_activeRange: {fileID: 446612509}
   isABCD: 1
   eventType: 2
 --- !u!222 &1013418957
@@ -3212,6 +3217,7 @@ MonoBehaviour:
   defaultMaterial: {fileID: 2100000, guid: 3cdc39cacfb912c439052118e6a794bc, type: 2}
   activeMaterial: {fileID: 2100000, guid: 76ff68f880a0d7a428caeb7693756251, type: 2}
   activeRangeMaterial: {fileID: 2100000, guid: f95b2991890e3b540a5a3b575f260a0a, type: 2}
+  img_activeRange: {fileID: 446612509}
   isABCD: 1
   eventType: 1
 --- !u!222 &1254422170
@@ -3466,6 +3472,7 @@ MonoBehaviour:
   defaultMaterial: {fileID: 2100000, guid: 3cdc39cacfb912c439052118e6a794bc, type: 2}
   activeMaterial: {fileID: 2100000, guid: 76ff68f880a0d7a428caeb7693756251, type: 2}
   activeRangeMaterial: {fileID: 2100000, guid: f95b2991890e3b540a5a3b575f260a0a, type: 2}
+  img_activeRange: {fileID: 446612509}
   isABCD: 1
   eventType: 3
 --- !u!222 &1283819675
@@ -4266,6 +4273,7 @@ MonoBehaviour:
   defaultMaterial: {fileID: 2100000, guid: 3cdc39cacfb912c439052118e6a794bc, type: 2}
   activeMaterial: {fileID: 2100000, guid: 76ff68f880a0d7a428caeb7693756251, type: 2}
   activeRangeMaterial: {fileID: 2100000, guid: f95b2991890e3b540a5a3b575f260a0a, type: 2}
+  img_activeRange: {fileID: 446612509}
   isABCD: 0
   eventType: 9
 --- !u!222 &1840358416
