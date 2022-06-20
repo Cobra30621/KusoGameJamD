@@ -12,6 +12,8 @@ public abstract class InteractableObject : MonoBehaviour,IPointerEnterHandler, I
     private Material defaultMaterial = null;
     [SerializeField]
     private Material activeMaterial = null;
+    [SerializeField]
+    private Material activeRangeMaterial = null;
     private Image image;
     private Vector3 mousePos
     { get { return Input.mousePosition; } }
@@ -67,13 +69,19 @@ public abstract class InteractableObject : MonoBehaviour,IPointerEnterHandler, I
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "ActiveRange")
+        if (collision.gameObject.name == "ActiveRange"){
             canActive = true;
+            collision.GetComponent<Image>().material = activeRangeMaterial;
+        }
+            
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "ActiveRange")
+        if (collision.gameObject.name == "ActiveRange"){
             canActive = false;
+            collision.GetComponent<Image>().material =  defaultMaterial;
+        }
+            
     }
     public abstract void OnActiveEvent();
 
